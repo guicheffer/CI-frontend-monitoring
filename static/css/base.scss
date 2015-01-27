@@ -19,8 +19,24 @@ $background_color : #FBFCFE ;
    CSS Reset
    ========================================================================== */
 
+@import "plugins/fonts" ;
 @import "plugins/reset" ;
 @import "compass/css3" ;
+
+/* =============================================================================
+   Plugins
+   ========================================================================== */
+
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
 
 /* =============================================================================
    General
@@ -39,7 +55,7 @@ body {
 		outline: 1px dotted;
 		background: #eee;
 		padding: 5px;
-		@include box-sizing(border-box) ;
+		@include box-sizing(border-box);
 		margin-top: 30px;
 		.content-list {
 			background: $background_color;
@@ -48,7 +64,7 @@ body {
 			clear: both;
 			border: 2px solid #C0CCDB;
 			padding: 20px;
-			@include box-sizing(border-box) ;
+			@include box-sizing(border-box);
 			.list-masthead {
 				list-style: none;
 				clear: both;
@@ -62,6 +78,9 @@ body {
 						padding-left: 0;
 					}
 				}
+			}
+			.list-servers {
+				
 			}
 		}
 	}

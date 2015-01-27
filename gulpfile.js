@@ -1,20 +1,20 @@
 var gulp = require( 'gulp' ) ,
-	/*path = require( 'path' ),*/
 	rename = require( 'gulp-rename' ),
   uglify = require( 'gulp-uglify' ),
-	compass = require( 'gulp-compass' )
+	compass = require( 'gulp-compass' ),
+  minifyCSS = require( 'gulp-minify-css' ),
   cssmin = require( 'gulp-cssmin' ) ;
 
 
 gulp.task( 'compass' , function() {
   gulp.src( './static/css/base.scss' )
+    /*.pipe( minifyCSS( { keepSpecialComments : '*' } ) )*/
     .pipe( compass( {
       config_file: './config.rb',
       css: 'static/css',
       sass: 'static/css'
     } ) )
-    .pipe( cssmin() )
-    .pipe( rename( 'base.min.css' ) )
+    /*.pipe( rename( 'base.min.css' ) )*/
     .pipe( gulp.dest( './static/css/' ) ) ;
 });
 

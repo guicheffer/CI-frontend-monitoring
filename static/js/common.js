@@ -11,10 +11,12 @@
  */
 
 
-
 //declaring main variable for all
 var servers = { /*...*/ } ;
 
+
+
+//server configs
 servers.configs = {
 
 	container: '.container',

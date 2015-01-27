@@ -23,5 +23,5 @@ gulp.task( 'compass' , function() {
 
 gulp.task( 'watch', function() {
 	gulp.watch( './static/js/common.js', ['uglify'] ) ;
-	gulp.watch( './static/js/base.scss', ['compass'] ) ;
+	gulp.watch( './static/css/base.scss', ['compass'] ) ;
 } ) ;

@@ -1,20 +1,3 @@
-@charset "UTF-8";
-/**
- * Jobvite Assignment
- * http://tests.guiatech.com.br/jobvite-assignment/
- * Copyright 2015, Guia Tech
- * Author: João Guilherme C. Prado
- * Library: Compass / ruby 2.0
- * 
- * Built with Angular and Polish of UX experience and adherence to spec, Cleanliness, simplicity of code / stubs aiming status of builds and firewalls.
- *
- * Date: Mon Jan 26 2015 22:49:32 GMT-0300
- */
-/* Variables */
-/* /Variables */
-/* =============================================================================
-   CSS Reset
-   ========================================================================== */
 /* HTML5 Boilerplate Reset - http://html5boilerplate.com/ */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block;
@@ -298,57 +281,4 @@ input:-moz-placeholder {
   font-weight: 300;
 }
 
-/* =============================================================================
-   General
-   ========================================================================== */
-body {
-  margin: 0;
-  clear: both;
-  font: 14px/16px verdana, sans-serif, arial;
-}
-
-.container {
-  width: 1265px;
-  margin: 0 auto;
-}
-.container .content {
-  outline: 1px dotted;
-  background: #ccc;
-  padding: 5px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin-top: 30px;
-}
-.container .content .content-list {
-  background: #FBFCFE;
-  width: 100%;
-  margin: 20px auto;
-  clear: both;
-  border: 2px solid #C0CCDB;
-  padding: 20px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.container .content .content-list .list-masthead {
-  list-style: none;
-  clear: both;
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 10px;
-}
-.container .content .content-list .list-masthead > li {
-  float: left;
-  padding: 0px 44px;
-}
-.container .content .content-list .list-masthead > li:first-child {
-  padding-left: 0;
-}
-
-/* =============================================================================
-   Footer
-   ========================================================================== */
-/*---*/
-
-/*# sourceMappingURL=base.css.map */
+/*# sourceMappingURL=reset.css.map */

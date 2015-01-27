@@ -313,7 +313,7 @@ body {
 }
 .container .content {
   outline: 1px dotted;
-  background: #ccc;
+  background: #eee;
   padding: 5px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

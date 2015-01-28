@@ -12,7 +12,8 @@
 
 /* Variables */
 $default_font : 14px/16px verdana, sans-serif, arial ;
-$background_color : #FBFCFE ;
+$background_color_from : #F9FBFE ;
+$background_color_to : #FEFFFF ;
 /* /Variables */
 
 /* =============================================================================
@@ -31,11 +32,13 @@ $background_color : #FBFCFE ;
 /* entypo */
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
+  font-style: normal;
 }
 
 /* fontawesome */
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
+  font-style: normal;
 }
 
 /* =============================================================================
@@ -57,30 +60,54 @@ body {
 		padding: 5px;
 		@include box-sizing(border-box);
 		margin-top: 30px;
-		.content-list {
-			background: $background_color;
-			width: 100%;
-			margin: 20px auto;
+	}
+	.content-list {
+		@include background-image(linear-gradient(to right, $background_color_from, $background_color_to));
+		width: 100%;
+		margin: 20px auto;
+		clear: both;
+		border: 2px solid #C0CCDB;
+		padding: 20px;
+		@include box-sizing(border-box);
+		.list-masthead {
+			list-style: none;
 			clear: both;
-			border: 2px solid #C0CCDB;
-			padding: 20px;
-			@include box-sizing(border-box);
-			.list-masthead {
-				list-style: none;
-				clear: both;
-				display: inline-block;
-				width: 100%;
-				margin-bottom: 10px;
-				& > li {
-					float: left;
-					padding: 0px 44px;
-					&:first-child {
-						padding-left: 0;
-					}
+			width: 100%;
+			margin-bottom: 10px;
+			& > li {
+				display: inline;
+				padding: 0px 40px;
+				&:first-child {
+					padding-left: 0;
 				}
 			}
-			.list-servers {
-				
+		}
+		.list-servers {
+			list-style: none;
+			.item {
+				@include box-sizing(border-box);
+				width: 100%;
+				padding: 5px;
+				&.item-running {
+					border: 2px solid #6596C3;
+					color: #6596C3;
+				}
+			}
+			.item-options {
+				list-style: none;
+				& > li {
+					display: inline-block;
+				}
+				.label {
+					&.label-tag {
+						font-size: 20px;
+						height: auto;
+						padding: 0;
+						&.tag-build {
+							border: 1px solid #ccc;
+						}
+					}
+				}
 			}
 		}
 	}

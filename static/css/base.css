@@ -2508,7 +2508,7 @@ body {
   padding: 0px 40px;
 }
 .container .content-list .list-masthead > li:first-child {
-  padding-left: 0;
+  padding-left: 10px;
 }
 .container .content-list .list-servers {
   list-style: none;
@@ -2519,6 +2519,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   padding: 5px;
+  height: 35px;
 }
 .container .content-list .list-servers .item.item-running {
   border: 2px solid #6596C3;
@@ -2530,13 +2531,16 @@ body {
 .container .content-list .list-servers .item-options > li {
   display: inline-block;
 }
-.container .content-list .list-servers .item-options .label.label-tag {
+.container .content-list .list-servers .item-options .label {
   font-size: 20px;
   height: auto;
   padding: 0;
 }
 .container .content-list .list-servers .item-options .label.label-tag.tag-build {
   border: 1px solid #ccc;
+}
+.container .content-list .list-servers .item-options .label.label-name {
+  width: 160px;
 }
 
 /* =============================================================================

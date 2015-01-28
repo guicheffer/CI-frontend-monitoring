@@ -78,7 +78,7 @@ body {
 				display: inline;
 				padding: 0px 40px;
 				&:first-child {
-					padding-left: 0;
+					padding-left: 10px;
 				}
 			}
 		}
@@ -88,6 +88,7 @@ body {
 				@include box-sizing(border-box);
 				width: 100%;
 				padding: 5px;
+				height: 35px;
 				&.item-running {
 					border: 2px solid #6596C3;
 					color: #6596C3;
@@ -99,13 +100,16 @@ body {
 					display: inline-block;
 				}
 				.label {
+					font-size: 20px;
+					height: auto;
+					padding: 0;
 					&.label-tag {
-						font-size: 20px;
-						height: auto;
-						padding: 0;
 						&.tag-build {
 							border: 1px solid #ccc;
 						}
+					}
+					&.label-name {
+						width: 160px;
 					}
 				}
 			}

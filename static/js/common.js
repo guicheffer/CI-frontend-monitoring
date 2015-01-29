@@ -26,7 +26,8 @@ jobviteservers.controller( 'showListBuildFirewall' , [ '$scope', '$http', functi
 		} ) ;
 
 	$scope.set_item = function ( $event ) {
-		var current_item = $( $event.currentTarget ) ;
+		var current_item = $( $event.currentTarget ),
+		target_clicked = $( $event.target ) ;
 
 		$( '.item.open' , servers.configs.list_servers ).each( function() {
 			if( $( this ).data( 'id-control' ) != current_item.data( 'id-control' ) ){
@@ -35,8 +36,11 @@ jobviteservers.controller( 'showListBuildFirewall' , [ '$scope', '$http', functi
 		} ) ;
 
 		//set in current one
-		current_item.toggleClass( 'open' ) ;
+		if( ! target_clicked.hasClass( 'prevent-default' ) ){
+			current_item.toggleClass( 'open' ) ;
+		}
 	}
+
 } ] ) ;
 /*/ANGULAR FUNCTIONS*/
 
@@ -49,9 +53,7 @@ servers.configs = {
 	list_servers: '.list-servers',
 
 	init: function() {
-		var that = this, container = $( that.container ), items = $( '.item' , that.list_servers ) ;
-
-		//...
+		var that = this, container = $( that.container ) ;
 	}
 } ;
 

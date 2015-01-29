@@ -34,7 +34,6 @@
 		"final_status": "Still Running"
 	},
 	{
-		"debug": "open",
 		"id": 2,
 		"type": "build",
 		"name": "432461",
@@ -42,7 +41,7 @@
 		"date": "4/18/2014 10:53am",
 		"state": "accepted",
 		"metrics": "70%",
-		"metrics_st": "running",
+		"metrics_st": "complete",
 		"build": "70%",
 		"build_st": "complete",
 		"unit": "70%",
@@ -59,7 +58,7 @@
 		"date": "4/18/2014 10:53am",
 		"state": "rejected",
 		"metrics": "70%",
-		"metrics_st": "running",
+		"metrics_st": "rejected",
 		"build": "70%",
 		"build_st": "complete",
 		"unit": "70%",
@@ -69,14 +68,15 @@
 		"final_status": "Metrics Reduction"
 	},
 	{
+		"debug": "open",
 		"id": 4,
 		"type": "firewall",
-		"name": "432461",
+		"name": "Tenrox-R1_1234",
 		"owner": "sammy",
 		"date": "4/18/2014 10:53am",
 		"state": "complete",
 		"metrics": "70%",
-		"metrics_st": "running",
+		"metrics_st": "complete",
 		"build": "70%",
 		"build_st": "complete",
 		"unit": "70%",

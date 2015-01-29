@@ -89,9 +89,26 @@
 								</div>
 								<div class="box box-result {{item.state}}">
 									<h2 class="title">Result</h2>
-									<h3>Change {{item.state}}</h3>
-									<p class="descr" ng-if"! item.state == 'complete'">{{item.final_status}}</p>
-									<button class="btn btn-merge" ng-if="item.state == 'accepted'"><i class="fontawesome-search icon-search"></i>Merged Build</button>
+									<h3 ng-if="!(item.state == 'complete')">Change {{item.state}}</h3>
+									<p class="descr">{{item.final_status}}</p>
+
+									<!--accepted-->
+									<button class="btn btn-merge prevent-default" ng-if="item.state == 'accepted'"><i class="fontawesome-search icon-search inverted"></i>Merged Build</button>
+
+									<!--accepted-->
+									<button class="btn btn-find-issues prevent-default" ng-if="item.state == 'rejected'"><i class="fontawesome-search icon-search"></i>Find Issues</button>
+
+									<!--complete-->
+									<div ng-if="item.state == 'complete'">
+										<button class="btn btn-deploy prevent-default">Deploy</button>
+										<span class="text-inline">to: </span>
+										<select class="select prevent-default select-deploy-to">
+											<option value="staging" selected>Staging</option>
+											<option value="test">Test env.</option>
+											<option value="prod">Production</option>
+										</select>
+									</div>
+
 								</div>
 							</div>
 							<!--/MORE DETAILS-->

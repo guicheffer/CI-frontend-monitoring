@@ -35,7 +35,7 @@
 
 					<!--MAIN LIST (SERVERS)-->
 					<ul id="list-servers" class="list-servers" ng-controller="showListBuildFirewall">
-						<li class="item item-{{item.state}}" data-id-control="{{item.id}}" ng-repeat="item in list" ng-click="set_item( $event )" expand-it>
+						<li class="item item-{{item.state}}" data-id-control="{{item.id}}" ng-repeat="item in list" ng-click="set_item( $event )" ng-class="{ 'open' : item.debug }" >
 							<ul class="item-options">
 								<li class="label label-tag tag-type">
 									<i ng-class="{'entypo-monitor': item.type == 'build' , 'fontawesome-th': item.type == 'firewall'}"></i>
@@ -46,29 +46,51 @@
 								<li class="label label-state">{{item.state}}</li>
 								<li class="label label-bars label-metrics">
 									<div class="lbar">
-										<div class="pcent {{item.state}}" style="width: {{item.metrics}}">
+										<div class="pcent {{item.metrics_st}}" style="width: {{item.metrics}}">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-build">
 									<div class="lbar">
-										<div class="pcent {{item.state}}" style="width: {{item.build}}">
+										<div class="pcent {{item.build_st}}" style="width: {{item.build}}">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-unit">
 									<div class="lbar">
-										<div class="pcent {{item.state}}" style="width: {{item.unit}}">
+										<div class="pcent {{item.unit_st}}" style="width: {{item.unit}}">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-functional">
 									<div class="lbar">
-										<div class="pcent {{item.state}}" style="width: {{item.functional}}">
+										<div class="pcent {{item.functional_st}}" style="width: {{item.functional}}">
 										</div>
 									</div>
 								</li>
 							</ul>
+
+							<!--MORE DETAILS-->
+							<div class="details">
+								<div class="box box-metrics {{item.metrics_st}}">
+									<h2 class="title">Metrics</h2>
+								</div>
+								<div class="box box-build {{item.build_st}}">
+									<h2 class="title">Build</h2>
+								</div>
+								<div class="box box-unit {{item.unit_st}}">
+									<h2 class="title">Unit Test</h2>
+								</div>
+								<div class="box box-functional {{item.functional_st}}" ng-class="{ 'complete' : item.functional_st == 'none' }">
+									<h2 class="title">Functional Test</h2>
+								</div>
+								<div class="box box-result {{item.state}}">
+									<h2 class="title">Result</h2>
+									<h3>Change {{item.state}}</h3>
+									<p class="descr">{{item.final_status}}</p>
+								</div>
+							</div>
+							<!--/MORE DETAILS-->
 						</li>
 					</ul>
 					<!--/MAIN LIST (SERVERS)-->

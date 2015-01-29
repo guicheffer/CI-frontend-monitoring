@@ -2466,6 +2466,7 @@ body {
   margin: 0;
   clear: both;
   font: 14px/16px verdana, sans-serif, arial;
+  color: #333;
 }
 
 .container {
@@ -2524,7 +2525,8 @@ body {
   height: 40px;
   margin: 15px 0 0;
   cursor: pointer;
-  user-select: none;
+  overflow: hidden;
+  position: relative;
 }
 .container .content-list .list-servers .item:first-child {
   margin: 0;
@@ -2562,7 +2564,7 @@ body {
   border: 1px solid #C31212;
   color: #C31212;
 }
-.container .content-list .list-servers .item.item-complete {
+.container .content-list .list-servers .item.item-complete, .container .content-list .list-servers .item.item-accepted {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuMCIgeDI9IjEuMCIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViZjFlOSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZlZmZmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
   background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #ebf1e9), color-stop(100%, #feffff));
@@ -2619,10 +2621,10 @@ body {
 }
 .container .content-list .list-servers .item-options > .label.label-bars {
   width: 124px;
-  -moz-transition: opacity 0.5s ease-in;
-  -o-transition: opacity 0.5s ease-in;
-  -webkit-transition: opacity 0.5s ease-in;
-  transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
 }
 .container .content-list .list-servers .item-options > .label.label-bars.label-unit {
   width: 162px;
@@ -2648,13 +2650,69 @@ body {
 .container .content-list .list-servers .item-options > .label.label-bars .lbar .pcent.rejected {
   background: #C00000;
 }
-.container .content-list .list-servers .item-options > .label.label-bars .lbar .pcent.complete {
+.container .content-list .list-servers .item-options > .label.label-bars .lbar .pcent.complete, .container .content-list .list-servers .item-options > .label.label-bars .lbar .pcent.accepted {
   background: #538135;
+}
+.container .content-list .list-servers .details {
+  margin: 28px 20px;
+}
+.container .content-list .list-servers .details > .box {
+  width: 180px;
+  height: 170px;
+  display: inline-block;
+  margin: 0px 18px;
+  -moz-box-shadow: #333 4px 4px 14px;
+  -webkit-box-shadow: #333 4px 4px 14px;
+  box-shadow: #333 4px 4px 14px;
+}
+.container .content-list .list-servers .details > .box.running {
+  border: 2px solid #5B9BD5;
+  color: #5B9BD5;
+}
+.container .content-list .list-servers .details > .box.rejected {
+  border: 2px solid #C00000;
+  color: #C00000;
+}
+.container .content-list .list-servers .details > .box.complete, .container .content-list .list-servers .details > .box.accepted {
+  border: 2px solid #538135;
+  color: #538135;
+}
+.container .content-list .list-servers .details > .box.box-result {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-align: center;
+  padding: 8px 0;
+  border: 0;
+  float: right;
+  margin-right: 30px;
+}
+.container .content-list .list-servers .details > .box.box-result.accepted {
+  color: #FEB802;
+  font-weight: normal;
+}
+.container .content-list .list-servers .details > .box.box-result .title {
+  color: #333;
+  font-weight: normal;
+}
+.container .content-list .list-servers .details > .box.box-result h3, .container .content-list .list-servers .details > .box.box-result .descr {
+  font-weight: normal;
+  text-transform: capitalize;
+  font-size: 14px;
+  margin: 0;
+}
+.container .content-list .list-servers .details > .box.box-result .descr {
+  font-size: 20px;
+}
+.container .content-list .list-servers .details > .box .title {
+  margin: 10px 8px;
+  font-size: 16px;
 }
 
 /* =============================================================================
    Footer
    ========================================================================== */
+/* --- */
 /*---*/
 
 /*# sourceMappingURL=base.css.map */

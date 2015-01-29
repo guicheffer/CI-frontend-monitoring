@@ -12,6 +12,7 @@
 
 /* Variables */
 $default_font : 14px/16px verdana, sans-serif, arial ;
+$default_font_color : #333 ;
 $background_color_running_from : #F9FBFE ;
 $background_color_running_to : #FEFFFF ;
 $background_color_rejected_from : #FEEAEA ;
@@ -53,6 +54,7 @@ body {
 	margin: 0;
 	clear: both;
 	font: $default_font;
+	color: $default_font_color;
 }
 
 .container {
@@ -96,7 +98,8 @@ body {
 				height: 40px;
 				margin: 15px 0 0;
 				cursor: pointer;
-				user-select: none;
+				overflow: hidden;
+				position: relative;
 				&:first-child {
 					margin: 0;
 				}
@@ -118,7 +121,7 @@ body {
 					border: 1px solid #C31212;
 					color: #C31212;
 				}
-				&.item-complete {
+				&.item-complete, &.item-accepted {
 					@include background-image(linear-gradient(to right bottom, $background_color_complete_from, $background_color_complete_to));
 					border: 1px solid #538135;
 					color: #538135;
@@ -169,7 +172,7 @@ body {
 					}
 					&.label-bars {
 						width: 124px;
-						@include transition(opacity .5s ease-in);
+						@include transition(opacity .2s ease-in);
 						&.label-unit {
 							width: 162px;
 						}
@@ -189,11 +192,62 @@ body {
 								&.rejected {
 									background: #C00000;
 								}
-								&.complete {
+								&.complete, &.accepted {
 									background: #538135;
 								}
 							}
 						}
+					}
+				}
+			}
+			.details {
+				margin: 28px 20px;
+				& > .box {
+					width: 180px;
+					height: 170px;
+					display: inline-block;
+					margin: 0px 18px;
+					@include box-shadow($default_font_color 4px 4px 14px);
+					&.running {
+						border: 2px solid #5B9BD5;
+						color: #5B9BD5;
+					}
+					&.rejected {
+						border: 2px solid #C00000;
+						color: #C00000;
+					}
+					&.complete, &.accepted {
+						border: 2px solid #538135;
+						color: #538135;
+					}
+					&.box-result {
+						@include box-shadow(none);
+						text-align: center;
+						padding: 8px 0;
+						border: 0;
+						float: right;
+						margin-right: 30px;
+						&.accepted {
+							color: #FEB802;
+							font-weight: normal;
+						}
+						.title {
+							color: $default_font_color;
+							font-weight: normal;
+						}
+						h3, .descr {
+							font-weight: normal;
+							text-transform: capitalize;
+							font-size: 14px;
+							margin: 0;
+						}
+						.descr {
+							font-size: 20px;
+						}
+					}
+					.title {
+						margin: 10px 8px;
+						font-size: 16px;
 					}
 				}
 			}
@@ -207,5 +261,6 @@ body {
    Footer
    ========================================================================== */
 
+/* --- */
 
 /*---*/

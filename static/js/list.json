@@ -6,15 +6,23 @@
 		"owner": "jtuck",
 		"date": "4/18/2014 12:12pm",
 		"state": "pending",
-		"metrics": "0%",
-		"metrics_st": "complete",
-		"build": "0%",
-		"build_st": "running",
-		"unit": "0%",
-		"unit_st": "rejected",
-		"functional": "0%",
-		"functional_st": "none",
-		"final_status": "Pending"
+		"final_status": "Pending",
+		"metrics": {
+			"total": "0%",
+			"metrics_st": "complete"
+		},
+		"build": {
+			"total": "0%",
+			"build_st": "running"
+		},
+		"unit": {
+			"total": "0%",
+			"unit_st": "rejected"
+		},
+		"functional": {
+			"total": "0%",
+			"functional_st": "none"
+		}
 	},
 	{
 		"id": 1,
@@ -23,15 +31,23 @@
 		"owner": "jtuck",
 		"date": "4/18/2014 12:12pm",
 		"state": "running",
-		"metrics": "30%",
-		"metrics_st": "complete",
-		"build": "30%",
-		"build_st": "running",
-		"unit": "30%",
-		"unit_st": "rejected",
-		"functional": "30%",
-		"functional_st": "none",
-		"final_status": "Still Running"
+		"final_status": "Still Running",
+		"metrics": {
+			"total": "30%",
+			"metrics_st": "complete"
+		},
+		"build": {
+			"total": "30%",
+			"build_st": "running"
+		},
+		"unit": {
+			"total": "30%",
+			"unit_st": "rejected"
+		},
+		"functional": {
+			"total": "30%",
+			"functional_st": "none"
+		}
 	},
 	{
 		"id": 2,
@@ -40,15 +56,23 @@
 		"owner": "sammy",
 		"date": "4/18/2014 10:53am",
 		"state": "accepted",
-		"metrics": "70%",
-		"metrics_st": "complete",
-		"build": "70%",
-		"build_st": "complete",
-		"unit": "70%",
-		"unit_st": "rejected",
-		"functional": "70%",
-		"functional_st": "none",
-		"final_status": "Auto-merged"
+		"final_status": "Auto-merged",
+		"metrics": {
+			"total": "70%",
+			"metrics_st": "complete"
+		},
+		"build": {
+			"total": "70%",
+			"build_st": "complete"
+		},
+		"unit": {
+			"total": "70%",
+			"unit_st": "rejected"
+		},
+		"functional": {
+			"total": "70%",
+			"functional_st": "none"
+		}
 	},
 	{
 		"id": 3,
@@ -57,15 +81,23 @@
 		"owner": "sammy",
 		"date": "4/18/2014 10:53am",
 		"state": "rejected",
-		"metrics": "70%",
-		"metrics_st": "rejected",
-		"build": "70%",
-		"build_st": "complete",
-		"unit": "70%",
-		"unit_st": "rejected",
-		"functional": "70%",
-		"functional_st": "none",
-		"final_status": "Metrics Reduction"
+		"final_status": "Metrics Reduction",
+		"metrics": {
+			"total": "70%",
+			"metrics_st": "rejected"
+		},
+		"build": {
+			"total": "70%",
+			"build_st": "complete"
+		},
+		"unit": {
+			"total": "70%",
+			"unit_st": "rejected"
+		},
+		"functional": {
+			"total": "70%",
+			"functional_st": "none"
+		}
 	},
 	{
 		"debug": "open",
@@ -75,14 +107,22 @@
 		"owner": "sammy",
 		"date": "4/18/2014 10:53am",
 		"state": "complete",
-		"metrics": "70%",
-		"metrics_st": "complete",
-		"build": "70%",
-		"build_st": "complete",
-		"unit": "70%",
-		"unit_st": "rejected",
-		"functional": "70%",
-		"functional_st": "none",
-		"final_status": "Complete"
+		"final_status": "Complete",
+		"metrics": {
+			"total": "70%",
+			"metrics_st": "complete"
+		},
+		"build": {
+			"total": "70%",
+			"build_st": "complete"
+		},
+		"unit": {
+			"total": "70%",
+			"unit_st": "complete"
+		},
+		"functional": {
+			"total": "70%",
+			"functional_st": "none"
+		}
 	}
 ]

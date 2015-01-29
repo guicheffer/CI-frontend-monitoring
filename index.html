@@ -48,55 +48,67 @@
 								<li class="label label-state">{{item.state}}</li>
 								<li class="label label-bars label-metrics">
 									<div class="lbar">
-										<div class="pcent {{item.metrics_st}}" style="width: {{item.metrics}}">
+										<div class="pcent {{item.metrics.metrics_st}}" style="width: {{item.metrics.total}}">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-build">
 									<div class="lbar">
-										<div class="pcent {{item.build_st}}" style="width: {{item.build}}">
+										<div class="pcent {{item.build.build_st}}" style="width: {{item.build.total}}">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-unit">
 									<div class="lbar">
-										<div class="pcent {{item.unit_st}}" style="width: {{item.unit}}">
+										<div class="pcent {{item.unit.unit_st}}" style="width: {{item.unit.total}}">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-functional">
 									<div class="lbar">
-										<div class="pcent {{item.functional_st}}" style="width: {{item.functional}}">
+										<div class="pcent {{item.functional.functional_st}}" style="width: {{item.functional.total}}">
 										</div>
 									</div>
 								</li>
 							</ul>
 							<!--/OPTS-->
 
+
+							<!--CLOSE BUTTON-->
+							<button class="btn btn-close"><span class="icon-x icon-side">X</span>Close</button>
+							<!--/CLOSE BUTTON-->
+
+
 							<!--MORE DETAILS-->
 							<div class="details">
-								<div class="box box-metrics {{item.metrics_st}}">
+								<div class="box box-metrics {{item.metrics.metrics_st}}" ng-class="{ 'complete' : item.metrics.metrics_st == 'none' }">
 									<h2 class="title">Metrics</h2>
+									<div class="arrows">
+										<div class="arrow-item">
+											<div class="arrow arrow-down down">
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="box box-build {{item.build_st}}">
+								<div class="box box-build {{item.build.build_st}}" ng-class="{ 'complete' : item.build.build_st == 'none' }">
 									<h2 class="title">Build</h2>
 								</div>
-								<div class="box box-unit {{item.unit_st}}">
+								<div class="box box-unit {{item.unit.unit_st}}" ng-class="{ 'complete' : item.unit.unit_st == 'none' }">
 									<h2 class="title">Unit Test</h2>
 								</div>
-								<div class="box box-functional {{item.functional_st}}" ng-class="{ 'complete' : item.functional_st == 'none' }">
+								<div class="box box-functional {{item.functional.functional_st}}" ng-class="{ 'complete' : item.functional.functional_st == 'none' }">
 									<h2 class="title">Functional Test</h2>
 								</div>
 								<div class="box box-result {{item.state}}">
-									<h2 class="title">Result</h2>
-									<h3 ng-if="!(item.state == 'complete')">Change {{item.state}}</h3>
+									<h2 class="title">Result:</h2>
+									<h3 ng-if="!(item.state == 'running' || item.state == 'complete')">Change {{item.state}}</h3>
 									<p class="descr">{{item.final_status}}</p>
 
 									<!--accepted-->
-									<button class="btn btn-merge prevent-default" ng-if="item.state == 'accepted'"><i class="fontawesome-search icon-search inverted"></i>Merged Build</button>
+									<button class="btn btn-merge prevent-default" ng-if="item.state == 'accepted'"><i class="fontawesome-search icon-side inverted"></i>Merged Build</button>
 
 									<!--accepted-->
-									<button class="btn btn-find-issues prevent-default" ng-if="item.state == 'rejected'"><i class="fontawesome-search icon-search"></i>Find Issues</button>
+									<button class="btn btn-find-issues prevent-default" ng-if="item.state == 'rejected'"><i class="fontawesome-search icon-side"></i>Find Issues</button>
 
 									<!--complete-->
 									<div ng-if="item.state == 'complete'">

@@ -2510,22 +2510,40 @@ body {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   background: #5B9BD5;
   border: 1px solid #AABBC9;
   padding: 5px;
   color: white;
   letter-spacing: 1px;
 }
-.container .content-list .btn .icon-search {
+.container .content-list .btn .icon-side {
   vertical-align: top;
   padding-right: 5px;
   display: inline-block;
 }
-.container .content-list .btn .icon-search.inverted {
+.container .content-list .btn .icon-side.inverted {
   /* if browser accepts */
   transform: rotateY(-180deg);
   padding-right: 0;
   padding-left: 5px;
+}
+.container .content-list .btn.btn-close {
+  display: none;
+  padding: 3px;
+  font-size: 12px;
+  right: 10px;
+  position: absolute;
+  top: 10px;
+}
+.container .content-list .btn.btn-close .icon-x {
+  font-weight: bold;
+}
+.container .content-list .btn:hover {
+  background: #fff;
+  color: #5B9BD5;
 }
 .container .content-list .select {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuMCIgeDI9IjEuMCIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZmNmZCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
@@ -2635,6 +2653,9 @@ body {
 .container .content-list .list-servers .item.open .label-bars {
   opacity: 0;
 }
+.container .content-list .list-servers .item.open .btn-close {
+  display: block;
+}
 .container .content-list .list-servers .item:hover {
   border: 1px solid #333;
 }
@@ -2652,7 +2673,7 @@ body {
   vertical-align: middle;
 }
 .container .content-list .list-servers .item-options > .label.label-tag {
-  margin-right: 40px;
+  margin-right: 25px;
   margin-left: 2px;
   width: 20px;
   height: 17px;
@@ -2661,7 +2682,7 @@ body {
   font-size: 20px;
 }
 .container .content-list .list-servers .item-options > .label.label-name {
-  width: 145px;
+  width: 160px;
 }
 .container .content-list .list-servers .item-options > .label.label-owner {
   -moz-transition: opacity 0.2s ease-in;
@@ -2714,8 +2735,10 @@ body {
 .container .content-list .list-servers .details {
   margin: 18px 20px;
   cursor: default;
+  /*/STATIC GRID*/
 }
 .container .content-list .list-servers .details > .box {
+  /*STATIC GRID*/
   width: 200px;
   height: 190px;
   display: inline-block;
@@ -2739,6 +2762,46 @@ body {
   box-shadow: #333 4px 4px 14px;
   border: 2px solid #538135;
   color: #538135;
+}
+.container .content-list .list-servers .details > .box.box-metrics .arrows {
+  padding: 0px 20px;
+}
+.container .content-list .list-servers .details > .box.box-metrics .arrows .arrow-item {
+  float: left;
+  overflow: hidden;
+  width: 70px;
+  height: 76px;
+  outline: 1px dotted;
+}
+.container .content-list .list-servers .details > .box.box-metrics .arrows .arrow-item .arrow {
+  border: 1px solid #CCC;
+  width: 29px;
+  height: 50px;
+  margin: 0 auto;
+}
+.container .content-list .list-servers .details > .box.box-metrics .arrows .arrow-item .arrow.up {
+  background: #538135;
+}
+.container .content-list .list-servers .details > .box.box-metrics .arrows .arrow-item .arrow.down {
+  background: #C00000;
+}
+.container .content-list .list-servers .details > .box.box-metrics .arrows .arrow-item .arrow:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 25px 30px 25px;
+  display: block;
+  position: relative;
+}
+.container .content-list .list-servers .details > .box.box-metrics .arrows .arrow-item .arrow.arrow-up:before {
+  border-color: transparent transparent #538135 transparent;
+}
+.container .content-list .list-servers .details > .box.box-metrics .arrows .arrow-item .arrow.arrow-down:before {
+  top: 43px;
+  left: -10px;
+  -webkit-transform: rotateZ(180deg);
+  border-color: transparent transparent #C00000 transparent;
 }
 .container .content-list .list-servers .details > .box.box-result {
   -moz-box-shadow: none;

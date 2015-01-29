@@ -89,12 +89,13 @@ body {
 		@include box-sizing(border-box);
 		.btn {
 			@include box-sizing(border-box);
+			@include border-radius(4px);
 			background: $color_default_ad;
 			border: 1px solid #AABBC9;
 			padding: 5px;
 			color: white;
 			letter-spacing: 1px;
-			.icon-search {
+			.icon-side {
 				vertical-align: top;
 				padding-right: 5px;
 				display: inline-block;
@@ -103,6 +104,21 @@ body {
 					padding-right: 0;
 					padding-left: 5px;
 				}
+			}
+			&.btn-close {
+				display: none;
+				padding: 3px;
+				font-size: 12px;
+				right: 10px;
+				position: absolute;
+				top: 10px;
+				.icon-x {
+					font-weight: bold;
+				}
+			}
+			&:hover {
+				background: #fff;
+				color: $color_default_ad;
 			}
 		}
 		.select {
@@ -178,6 +194,9 @@ body {
 					.label-bars {
 						opacity: 0;
 					}
+					.btn-close {
+						display: block;
+					}
 				}
 				&:hover {
 					border: 1px solid $default_font_color;
@@ -195,7 +214,7 @@ body {
 					display: inline-block;
 					vertical-align: middle;
 					&.label-tag {
-						margin-right: 40px;
+						margin-right: 25px;
 						margin-left: 2px;
 						width: 20px;
 						height: 17px;
@@ -204,7 +223,7 @@ body {
 						}
 					}
 					&.label-name {
-						width: 145px;
+						width: 160px;
 					}
 					&.label-owner {
 						@include transition(opacity .2s ease-in);
@@ -250,7 +269,7 @@ body {
 			.details {
 				margin: 18px 20px;
 				cursor: default;
-				& > .box {
+				& > .box { /*STATIC GRID*/
 					width: 200px;
 					height: 190px;
 					display: inline-block;
@@ -271,6 +290,48 @@ body {
 						@include box-shadow($default_font_color 4px 4px 14px);
 						border: 2px solid #538135;
 						color: #538135;
+					}
+					&.box-metrics{
+						.arrows {
+							padding: 0px 20px;
+							.arrow-item {
+								float: left;
+								overflow: hidden;
+								width: 70px;
+								height: 76px;
+								outline: 1px dotted;
+								.arrow {
+									border: 1px solid #CCC;
+									width: 29px;
+									height: 50px;
+									margin: 0 auto;
+									&.up {
+										background: #538135;
+									}
+									&.down {
+										background: #C00000;
+									}
+									&:before {
+										content: '';
+										width: 0;
+										height: 0;
+										border-style: solid;
+										border-width: 0 25px 30px 25px;
+										display: block;
+										position: relative;
+									}
+									&.arrow-up:before {
+										border-color: transparent transparent #538135 transparent;
+									}
+									&.arrow-down:before {
+										top: 43px;
+										left: -10px;
+										-webkit-transform: rotateZ(180deg);
+										border-color: transparent transparent #C00000 transparent;
+									}
+								}
+							}
+						}
 					}
 					&.box-result {
 						@include box-shadow(none);
@@ -304,7 +365,7 @@ body {
 							margin-bottom: 30px;
 						}
 					}
-				}
+				} /*/STATIC GRID*/
 			}
 		}
 	}

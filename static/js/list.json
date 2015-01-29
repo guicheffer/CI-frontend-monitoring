@@ -1,5 +1,6 @@
 [
 	{
+		"id": 1,
 		"type": "build",
 		"name": "432462",
 		"owner": "jtuck",
@@ -15,6 +16,7 @@
 		"functional_st": "none"
 	},
 	{
+		"id": 2,
 		"type": "firewall",
 		"name": "432461",
 		"owner": "sammy",
@@ -28,5 +30,5 @@
 		"unit_st": "rejected",
 		"functional": "70%",
 		"functional_st": "none"
-	},
+	}
 ]

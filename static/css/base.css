@@ -2531,6 +2531,8 @@ body {
   padding: 5px;
   height: 40px;
   margin: 15px 0 0;
+  cursor: pointer;
+  user-select: none;
 }
 .container .content-list .list-servers .item:first-child {
   margin: 0;
@@ -2606,9 +2608,8 @@ body {
   width: 20px;
   height: 17px;
 }
-.container .content-list .list-servers .item-options > .label.label-tag.tag-build {
+.container .content-list .list-servers .item-options > .label.label-tag.tag-type {
   font-size: 20px;
-  border: 1px solid #ccc;
 }
 .container .content-list .list-servers .item-options > .label.label-name {
   width: 145px;
@@ -2621,6 +2622,7 @@ body {
 }
 .container .content-list .list-servers .item-options > .label.label-state {
   width: 125px;
+  text-transform: capitalize;
 }
 .container .content-list .list-servers .item-options > .label.label-bars {
   width: 124px;

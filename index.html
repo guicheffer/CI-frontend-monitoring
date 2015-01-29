@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 	<head>
+		<meta charset="utf-8">
 		<title>Assignment - Jobvite</title>
 		<link href="static/images/jobvite.ico" rel="shortcut icon" type="image/x-icon"/>
 		<link rel="stylesheet" type="text/css" href="static/css/base.css">
+		<script type="text/javascript" src="static/js/plugins/angular.min.js"></script>
 		<script type="text/javascript" src="static/js/plugins/jquery_2-1-1.min.js"></script>
 		<script type="text/javascript" src="static/js/common.min.js"></script>
 	</head>
-	<body>
+	<body ng-app="jobviteservers">
 
 		<!--CONTAINER-->
 		<div class="container">
@@ -32,35 +34,37 @@
 
 
 					<!--MAIN LIST (SERVERS)-->
-					<ul id="list-servers" class="list-servers">
-						<li class="item item-running">
+					<ul id="list-servers" class="list-servers" ng-controller="showListBuildFirewall">
+						<li class="item item-{{item.state}}" data-id-control="{{item.id}}" ng-repeat="item in list" ng-click="set_item( $event )" expand-it>
 							<ul class="item-options">
-								<li class="label label-tag tag-build"><i class="entypo-monitor"></i></li>
-								<li class="label label-name">432461</li>
-								<li class="label label-owner">jtuck</li>
-								<li class="label label-date">4/18/2014 12:12pm</li>
-								<li class="label label-state">Running</li>
+								<li class="label label-tag tag-type">
+									<i ng-class="{'entypo-monitor': item.type == 'build' , 'fontawesome-th': item.type == 'firewall'}"></i>
+								</li>
+								<li class="label label-name">{{item.name}}</li>
+								<li class="label label-owner">{{item.owner}}</li>
+								<li class="label label-date">{{item.date}}</li>
+								<li class="label label-state">{{item.state}}</li>
 								<li class="label label-bars label-metrics">
 									<div class="lbar">
-										<div class="pcent running" style="width: 50%">
+										<div class="pcent {{item.state}}" style="width: {{item.metrics}}">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-build">
 									<div class="lbar">
-										<div class="pcent complete" style="width: 50%">
+										<div class="pcent {{item.state}}" style="width: {{item.build}}">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-unit">
 									<div class="lbar">
-										<div class="pcent rejected" style="width: 50%">
+										<div class="pcent {{item.state}}" style="width: {{item.unit}}">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-functional">
 									<div class="lbar">
-										<div class="pcent">
+										<div class="pcent {{item.state}}" style="width: {{item.functional}}">
 										</div>
 									</div>
 								</li>

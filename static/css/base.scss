@@ -12,8 +12,12 @@
 
 /* Variables */
 $default_font : 14px/16px verdana, sans-serif, arial ;
-$background_color_from : #F9FBFE ;
-$background_color_to : #FEFFFF ;
+$background_color_running_from : #F9FBFE ;
+$background_color_running_to : #FEFFFF ;
+$background_color_rejected_from : #FEEAEA ;
+$background_color_rejected_to : #FEFFFF ;
+$background_color_complete_from : #EBF1E9 ;
+$background_color_complete_to : #FEFFFF ;
 /* /Variables */
 
 /* =============================================================================
@@ -55,14 +59,14 @@ body {
 	width: 1265px;
 	margin: 0 auto;
 	.content {
-		outline: 1px dotted;
-		background: #eee;
-		padding: 5px;
 		@include box-sizing(border-box);
+		padding: 5px;
 		margin-top: 30px;
+		// outline: 1px dotted;
+		// background: #eee;
 	}
 	.content-list {
-		@include background-image(linear-gradient(to right, $background_color_from, $background_color_to));
+		@include background-image(linear-gradient(to right, $background_color_running_from, $background_color_running_to));
 		width: 100%;
 		margin: 20px auto;
 		clear: both;
@@ -86,30 +90,113 @@ body {
 			list-style: none;
 			.item {
 				@include box-sizing(border-box);
+				@include transition-property(height);
+				@include transition-duration(.2s);
+				@include transition-timing-function(ease-in);
 				width: 100%;
 				padding: 5px;
-				height: 35px;
+				height: 40px;
+				margin: 15px 0 0;
+				&:first-child {
+					margin: 0;
+				}
+				&.item-pending {
+					@include background-image(linear-gradient(to right bottom, $background_color_running_from, $background_color_running_to));
+					border: 1px solid #BFBFBF;
+					color: #BFBFBF;
+					pointer-events: none;
+					cursor: default;
+					opacity: 0.8;
+				}
 				&.item-running {
-					border: 2px solid #6596C3;
+					@include background-image(linear-gradient(to right bottom, $background_color_running_from, $background_color_running_to));
+					border: 1px solid #6596C3;
 					color: #6596C3;
+				}
+				&.item-rejected {
+					@include background-image(linear-gradient(to right bottom, $background_color_rejected_from, $background_color_rejected_to));
+					border: 1px solid #C31212;
+					color: #C31212;
+				}
+				&.item-complete {
+					@include background-image(linear-gradient(to right bottom, $background_color_complete_from, $background_color_complete_to));
+					border: 1px solid #538135;
+					color: #538135;
+				}
+				&.open {
+					height: 268px;
+					.label-name {
+						color: #2D74B4;
+						font-size: 17px;
+						text-decoration: underline;
+						text-indent: -5px;
+						padding-top: 5px;
+					}
+					.label-bars {
+						opacity: 0;
+					}
 				}
 			}
 			.item-options {
 				list-style: none;
-				& > li {
-					display: inline-block;
-				}
-				.label {
-					font-size: 20px;
+				& > .label {
+					font-size: 15px;
 					height: auto;
 					padding: 0;
+					display: inline-block;
+					vertical-align: middle;
 					&.label-tag {
+						margin-right: 40px;
+						width: 20px;
+						height: 17px;
 						&.tag-build {
+							font-size: 20px;
 							border: 1px solid #ccc;
 						}
 					}
 					&.label-name {
-						width: 160px;
+						width: 145px;
+					}
+					&.label-owner {
+						width: 95px;
+					}
+					&.label-date {
+						width: 190px;
+					}
+					&.label-state {
+						width: 125px;
+					}
+					&.label-bars {
+						width: 124px;
+						@include transition-property(opacity);
+						@include transition-duration(.5s);
+						@include transition-timing-function(ease-in);
+						&.label-unit {
+							width: 162px;
+						}
+						.lbar {
+							width: 50px;
+							height: 25px;
+							background: #D8D8D8;
+							border: 1px solid #C8C8C7;
+							.pcent {
+								display: block;
+								height: 25px;
+								width: 0%;
+								@include transition-property(width);
+								@include transition-duration(.5s);
+								@include transition-timing-function(ease-out);
+								&.running {
+									background: #5B9BD5;
+								}
+								&.rejected {
+									background: #C00000;
+								}
+								&.complete {
+									background: #538135;
+								}
+							}
+						}
 					}
 				}
 			}

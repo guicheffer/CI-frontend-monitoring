@@ -90,9 +90,7 @@ body {
 			list-style: none;
 			.item {
 				@include box-sizing(border-box);
-				@include transition-property(height);
-				@include transition-duration(.2s);
-				@include transition-timing-function(ease-in);
+				@include transition(height .1s ease-in);
 				width: 100%;
 				padding: 5px;
 				height: 40px;
@@ -149,6 +147,7 @@ body {
 					vertical-align: middle;
 					&.label-tag {
 						margin-right: 40px;
+						margin-left: 2px;
 						width: 20px;
 						height: 17px;
 						&.tag-type {
@@ -170,9 +169,7 @@ body {
 					}
 					&.label-bars {
 						width: 124px;
-						@include transition-property(opacity);
-						@include transition-duration(.5s);
-						@include transition-timing-function(ease-in);
+						@include transition(opacity .5s ease-in);
 						&.label-unit {
 							width: 162px;
 						}
@@ -185,9 +182,7 @@ body {
 								display: block;
 								height: 25px;
 								width: 0%;
-								@include transition-property(width);
-								@include transition-duration(.5s);
-								@include transition-timing-function(ease-out);
+								@include transition(width .5s ease-out);
 								&.running {
 									background: #5B9BD5;
 								}

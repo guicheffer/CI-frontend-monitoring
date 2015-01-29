@@ -2515,18 +2515,10 @@ body {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-transition-property: height;
-  -o-transition-property: height;
-  -webkit-transition-property: height;
-  transition-property: height;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
+  -moz-transition: height 0.1s ease-in;
+  -o-transition: height 0.1s ease-in;
+  -webkit-transition: height 0.1s ease-in;
+  transition: height 0.1s ease-in;
   width: 100%;
   padding: 5px;
   height: 40px;
@@ -2605,6 +2597,7 @@ body {
 }
 .container .content-list .list-servers .item-options > .label.label-tag {
   margin-right: 40px;
+  margin-left: 2px;
   width: 20px;
   height: 17px;
 }
@@ -2626,18 +2619,10 @@ body {
 }
 .container .content-list .list-servers .item-options > .label.label-bars {
   width: 124px;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+  -webkit-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in;
 }
 .container .content-list .list-servers .item-options > .label.label-bars.label-unit {
   width: 162px;
@@ -2652,18 +2637,10 @@ body {
   display: block;
   height: 25px;
   width: 0%;
-  -moz-transition-property: width;
-  -o-transition-property: width;
-  -webkit-transition-property: width;
-  transition-property: width;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
+  -moz-transition: width 0.5s ease-out;
+  -o-transition: width 0.5s ease-out;
+  -webkit-transition: width 0.5s ease-out;
+  transition: width 0.5s ease-out;
 }
 .container .content-list .list-servers .item-options > .label.label-bars .lbar .pcent.running {
   background: #5B9BD5;

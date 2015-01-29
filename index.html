@@ -36,6 +36,8 @@
 					<!--MAIN LIST (SERVERS)-->
 					<ul id="list-servers" class="list-servers" ng-controller="showListBuildFirewall">
 						<li class="item item-{{item.state}}" data-id-control="{{item.id}}" ng-repeat="item in list" ng-click="set_item( $event )" ng-class="{ 'open' : item.debug }" >
+
+							<!--OPTS-->
 							<ul class="item-options">
 								<li class="label label-tag tag-type">
 									<i ng-class="{'entypo-monitor': item.type == 'build' , 'fontawesome-th': item.type == 'firewall'}"></i>
@@ -69,6 +71,7 @@
 									</div>
 								</li>
 							</ul>
+							<!--/OPTS-->
 
 							<!--MORE DETAILS-->
 							<div class="details">
@@ -87,7 +90,8 @@
 								<div class="box box-result {{item.state}}">
 									<h2 class="title">Result</h2>
 									<h3>Change {{item.state}}</h3>
-									<p class="descr">{{item.final_status}}</p>
+									<p class="descr" ng-if"! item.state == 'complete'">{{item.final_status}}</p>
+									<button class="btn btn-merge" ng-if="item.state == 'accepted'"><i class="fontawesome-search icon-search"></i>Merged Build</button>
 								</div>
 							</div>
 							<!--/MORE DETAILS-->

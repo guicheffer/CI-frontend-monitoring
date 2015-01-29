@@ -2496,6 +2496,22 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+.container .content-list .btn {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #5B9BD5;
+  border: 1px solid #AABBC9;
+  padding: 5px;
+  color: white;
+  letter-spacing: 1px;
+}
+.container .content-list .btn .icon-search {
+  -webkit-transform: rotateY(-180deg);
+  vertical-align: top;
+  padding-left: 5px;
+  display: inline-block;
+}
 .container .content-list .list-masthead {
   list-style: none;
   clear: both;
@@ -2654,16 +2670,20 @@ body {
   background: #538135;
 }
 .container .content-list .list-servers .details {
-  margin: 28px 20px;
+  margin: 18px 20px;
 }
 .container .content-list .list-servers .details > .box {
-  width: 180px;
-  height: 170px;
+  width: 200px;
+  height: 190px;
   display: inline-block;
-  margin: 0px 18px;
+  margin: 0px 10px;
   -moz-box-shadow: #333 4px 4px 14px;
   -webkit-box-shadow: #333 4px 4px 14px;
   box-shadow: #333 4px 4px 14px;
+}
+.container .content-list .list-servers .details > .box .title {
+  margin: 10px 8px;
+  font-size: 16px;
 }
 .container .content-list .list-servers .details > .box.running {
   border: 2px solid #5B9BD5;
@@ -2682,10 +2702,10 @@ body {
   -webkit-box-shadow: none;
   box-shadow: none;
   text-align: center;
-  padding: 8px 0;
+  padding: 18px 0;
   border: 0;
   float: right;
-  margin-right: 30px;
+  margin-right: 18px;
 }
 .container .content-list .list-servers .details > .box.box-result.accepted {
   color: #FEB802;
@@ -2702,11 +2722,9 @@ body {
   margin: 0;
 }
 .container .content-list .list-servers .details > .box.box-result .descr {
-  font-size: 20px;
-}
-.container .content-list .list-servers .details > .box .title {
-  margin: 10px 8px;
-  font-size: 16px;
+  line-height: 28px;
+  font-size: 30px;
+  margin-bottom: 30px;
 }
 
 /* =============================================================================

@@ -1,6 +1,6 @@
 [
 	{
-		"id": 1,
+		"id": 0,
 		"type": "build",
 		"name": "432462",
 		"owner": "jtuck",
@@ -31,7 +31,7 @@
 		"unit_st": "rejected",
 		"functional": "30%",
 		"functional_st": "none",
-		"final_status": "Auto-merged"
+		"final_status": "Still Running"
 	},
 	{
 		"debug": "open",
@@ -49,7 +49,7 @@
 		"unit_st": "rejected",
 		"functional": "70%",
 		"functional_st": "none",
-		"final_status": "Metrics Reduction"
+		"final_status": "Auto-merged"
 	},
 	{
 		"id": 3,
@@ -67,5 +67,22 @@
 		"functional": "70%",
 		"functional_st": "none",
 		"final_status": "Metrics Reduction"
+	},
+	{
+		"id": 4,
+		"type": "firewall",
+		"name": "432461",
+		"owner": "sammy",
+		"date": "4/18/2014 10:53am",
+		"state": "complete",
+		"metrics": "70%",
+		"metrics_st": "running",
+		"build": "70%",
+		"build_st": "complete",
+		"unit": "70%",
+		"unit_st": "rejected",
+		"functional": "70%",
+		"functional_st": "none",
+		"final_status": "Complete"
 	}
 ]

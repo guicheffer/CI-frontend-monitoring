@@ -34,7 +34,7 @@ jobviteservers.controller( 'showListBuildFirewall' , [ '$scope', '$http', functi
 			}
 		} ) ;
 
-		//current one
+		//set in current one
 		current_item.toggleClass( 'open' ) ;
 	}
 } ] ) ;

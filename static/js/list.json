@@ -9,7 +9,11 @@
 		"final_status": "Pending",
 		"metrics": {
 			"total": "0%",
-			"metrics_st": "complete"
+			"metrics_st": "complete",
+			"T": {
+				"n": 64,
+				"way": "down"
+			}
 		},
 		"build": {
 			"total": "0%",
@@ -34,7 +38,11 @@
 		"final_status": "Still Running",
 		"metrics": {
 			"total": "30%",
-			"metrics_st": "complete"
+			"metrics_st": "complete",
+			"T": {
+				"n": 64,
+				"way": "down"
+			}
 		},
 		"build": {
 			"total": "30%",
@@ -59,7 +67,11 @@
 		"final_status": "Auto-merged",
 		"metrics": {
 			"total": "70%",
-			"metrics_st": "complete"
+			"metrics_st": "complete",
+			"T": {
+				"n": 64,
+				"way": "down"
+			}
 		},
 		"build": {
 			"total": "70%",
@@ -84,7 +96,11 @@
 		"final_status": "Metrics Reduction",
 		"metrics": {
 			"total": "70%",
-			"metrics_st": "rejected"
+			"metrics_st": "rejected",
+			"T": {
+				"n": 64,
+				"way": "down"
+			}
 		},
 		"build": {
 			"total": "70%",
@@ -110,7 +126,11 @@
 		"final_status": "Complete",
 		"metrics": {
 			"total": "70%",
-			"metrics_st": "complete"
+			"metrics_st": "complete",
+			"T": {
+				"n": 64,
+				"way": "down"
+			}
 		},
 		"build": {
 			"total": "70%",

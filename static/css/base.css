@@ -2768,19 +2768,21 @@ body {
 }
 .container .content-list .list-servers .details > .box.box-metrics .arrows .legend {
   color: #333;
+  font-size: 12px;
 }
 .container .content-list .list-servers .details > .box.box-metrics .arrows .arrow-item {
+  outline: 1px dotted;
   float: left;
   width: 70px;
-  height: 70px;
-  outline: 1px dotted;
+  height: 60px;
+  margin: 0 10px 10px 0;
 }
 .container .content-list .list-servers .details > .box.box-metrics .arrows .arrow-item .legend {
   color: #000;
   text-align: center;
   width: 100%;
   display: block;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .container .content-list .list-servers .details > .box.box-metrics .arrows .arrow-item .arrow {
   border: 1px solid #CCC;
@@ -2807,7 +2809,7 @@ body {
   border-color: transparent transparent #538135 transparent;
 }
 .container .content-list .list-servers .details > .box.box-metrics .arrows .arrow-item .arrow.arrow-down:before {
-  top: 40px;
+  top: 30px;
   left: -10px;
   -webkit-transform: rotateZ(180deg);
   border-color: transparent transparent #C00000 transparent;
@@ -2816,6 +2818,7 @@ body {
   z-index: 9999;
   position: relative;
   left: 3px;
+  top: -6px;
   color: #FFF;
   font-weight: bold;
   font-size: 17px;

@@ -8,7 +8,7 @@
 		"state": "pending",
 		"final_status": "Pending",
 		"metrics": {
-			"total": "0%",
+			"total": 0,
 			"metrics_st": "complete",
 			"test": {
 				"n": 64,
@@ -28,17 +28,24 @@
 			}
 		},
 		"build": {
-			"total": "0%",
+			"total": 0,
 			"build_st": "running",
 			"date_build": "10:46am - 4/17/2014"
 		},
 		"unit": {
-			"total": "0%",
-			"unit_st": "rejected"
+			"total": 0,
+			"unit_st": "rejected",
+			"msg": "tests passed",
+			"code_covered_pcent": 76,
+			"code_covered": 142,
+			"code_not_covered": 40
 		},
 		"functional": {
-			"total": "0%",
-			"functional_st": "none"
+			"total": 0,
+			"functional_st": "none",
+			"code_covered_pcent": 23,
+			"code_covered": 142,
+			"code_not_covered": 40
 		}
 	},
 	{
@@ -50,7 +57,7 @@
 		"state": "running",
 		"final_status": "Still Running",
 		"metrics": {
-			"total": "30%",
+			"total": 30,
 			"metrics_st": "complete",
 			"test": {
 				"n": 64,
@@ -70,17 +77,24 @@
 			}
 		},
 		"build": {
-			"total": "30%",
+			"total": 30,
 			"build_st": "running",
 			"date_build": "10:46am - 4/17/2014"
 		},
 		"unit": {
-			"total": "30%",
-			"unit_st": "rejected"
+			"total": 30,
+			"unit_st": "rejected",
+			"msg": "tests passed",
+			"code_covered_pcent": 76,
+			"code_covered": 142,
+			"code_not_covered": 40
 		},
 		"functional": {
-			"total": "30%",
-			"functional_st": "none"
+			"total": 30,
+			"functional_st": "none",
+			"code_covered_pcent": 23,
+			"code_covered": 142,
+			"code_not_covered": 40
 		}
 	},
 	{
@@ -92,7 +106,7 @@
 		"state": "rejected",
 		"final_status": "Metrics Reduction",
 		"metrics": {
-			"total": "70%",
+			"total": 70,
 			"metrics_st": "rejected",
 			"test": {
 				"n": 64,
@@ -112,17 +126,24 @@
 			}
 		},
 		"build": {
-			"total": "70%",
+			"total": 70,
 			"build_st": "running",
 			"date_build": "10:46am - 4/17/2014"
 		},
 		"unit": {
-			"total": "70%",
-			"unit_st": "rejected"
+			"total": 73,
+			"unit_st": "rejected",
+			"msg": "tests passed",
+			"code_covered_pcent": 76,
+			"code_covered": 142,
+			"code_not_covered": 40
 		},
 		"functional": {
-			"total": "70%",
-			"functional_st": "none"
+			"total": 68,
+			"functional_st": "none",
+			"code_covered_pcent": 23,
+			"code_covered": 142,
+			"code_not_covered": 40
 		}
 	},
 	{
@@ -135,7 +156,7 @@
 		"state": "complete",
 		"final_status": "Complete",
 		"metrics": {
-			"total": "70%",
+			"total": 70,
 			"metrics_st": "complete",
 			"test": {
 				"n": 64,
@@ -155,17 +176,24 @@
 			}
 		},
 		"build": {
-			"total": "70%",
+			"total": 70,
 			"build_st": "running",
 			"date_build": "10:46am - 4/17/2014"
 		},
 		"unit": {
-			"total": "70%",
-			"unit_st": "complete"
+			"total": 73,
+			"unit_st": "complete",
+			"msg": "tests passed",
+			"code_covered_pcent": 76,
+			"code_covered": 142,
+			"code_not_covered": 40
 		},
 		"functional": {
-			"total": "70%",
-			"functional_st": "none"
+			"total": 68,
+			"functional_st": "none",
+			"code_covered_pcent": 23,
+			"code_covered": 142,
+			"code_not_covered": 40
 		}
 	},
 	{
@@ -177,7 +205,7 @@
 		"state": "rejected",
 		"final_status": "Metrics Reduction",
 		"metrics": {
-			"total": "70%",
+			"total": 70,
 			"metrics_st": "rejected",
 			"test": {
 				"n": 45,
@@ -197,17 +225,24 @@
 			}
 		},
 		"build": {
-			"total": "70%",
+			"total": 70,
 			"build_st": "complete",
 			"date_build": "10:46am - 4/17/2014"
 		},
 		"unit": {
-			"total": "70%",
-			"unit_st": "rejected"
+			"total": 73,
+			"unit_st": "rejected",
+			"msg": "tests passed",
+			"code_covered_pcent": 76,
+			"code_covered": 142,
+			"code_not_covered": 40
 		},
 		"functional": {
-			"total": "70%",
-			"functional_st": "none"
+			"total": 68,
+			"functional_st": "none",
+			"code_covered_pcent": 23,
+			"code_covered": 142,
+			"code_not_covered": 40
 		}
 	},
 	{
@@ -219,7 +254,7 @@
 		"state": "accepted",
 		"final_status": "Auto-merged",
 		"metrics": {
-			"total": "70%",
+			"total": 70,
 			"metrics_st": "complete",
 			"test": {
 				"n": 64,
@@ -239,17 +274,24 @@
 			}
 		},
 		"build": {
-			"total": "70%",
+			"total": 70,
 			"build_st": "running",
 			"date_build": "10:46am - 4/17/2014"
 		},
 		"unit": {
-			"total": "70%",
-			"unit_st": "rejected"
+			"total": 73,
+			"unit_st": "rejected",
+			"msg": "tests passed",
+			"code_covered_pcent": 76,
+			"code_covered": 142,
+			"code_not_covered": 40
 		},
 		"functional": {
-			"total": "70%",
-			"functional_st": "none"
+			"total": 68,
+			"functional_st": "none",
+			"code_covered_pcent": 23,
+			"code_covered": 142,
+			"code_not_covered": 40
 		}
 	}
 ]

@@ -36,7 +36,7 @@
 
 					<!--MAIN LIST (SERVERS)-->
 					<ul id="list-servers" class="list-servers" data-ng-controller="showListBuildFirewall">
-						<li class="item item-{{item.state}}" data-id-control="{{item.id}}" data-ng-repeat="item in list" data-ng-click="set_item( $event )" data-ng-class="{ 'open' : item.debug }" >
+						<li class="item item-{{item.state}}" data-ng-repeat="item in list" data-ng-click="set_item( $event )" data-ng-class="{ 'open' : item.debug }" data-id-control="{{item.id}}" data-on-finish-render="ngRepeatFinished">
 
 							<!--OPTS-->
 							<ul class="item-options">
@@ -49,25 +49,25 @@
 								<li class="label label-state">{{item.state}}</li>
 								<li class="label label-bars label-metrics">
 									<div class="lbar">
-										<div class="pcent {{item.metrics.metrics_st}}" style="width: {{item.metrics.total}}">
+										<div class="pcent {{item.metrics.metrics_st}}" style="width: {{item.metrics.total}}%">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-build">
 									<div class="lbar">
-										<div class="pcent {{item.build.build_st}}" style="width: {{item.build.total}}">
+										<div class="pcent {{item.build.build_st}}" style="width: {{item.build.total}}%">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-unit">
 									<div class="lbar">
-										<div class="pcent {{item.unit.unit_st}}" style="width: {{item.unit.total}}">
+										<div class="pcent {{item.unit.unit_st}}" style="width: {{item.unit.total}}%">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-functional">
 									<div class="lbar">
-										<div class="pcent {{item.functional.functional_st}}" style="width: {{item.functional.total}}">
+										<div class="pcent {{item.functional.functional_st}}" style="width: {{item.functional.total}}%">
 										</div>
 									</div>
 								</li>
@@ -133,11 +133,47 @@
 								<!--unit-->
 								<section class="box box-unit {{item.unit.unit_st}}" data-ng-class="{ 'complete' : item.unit.unit_st == 'none' }">
 									<h2 class="title">Unit Test</h2>
+									<div class="content">
+										<!--chart-->
+										<div class="pie chart">
+											<canvas class="org-pie pie-{{item.id}}" width="100%" height="100%" data-code-covered="{{item.unit.code_covered}}" data-code-not-covered="{{item.unit.code_not_covered}}"></canvas>
+										</div>
+										<!--percentage status-->
+										<div class="pie pcent">
+											<span class="real">{{item.unit.total}}%</span>
+											<span class="descr">{{item.unit.msg}}</span>
+										</div>
+										<!--a clear status bar-->
+										<div class="pie stbar">
+											<div class="fill" style="width: {{item.unit.code_covered_pcent}}%;">
+											</div>
+											<span class="pcent" ng-class="{ 'down': item.unit.code_covered_pcent <= 50 }">{{item.unit.code_covered_pcent}}%</span>
+											<span class="descr">code covered</span>
+										</div>
+									</div>
 								</section>
 
 								<!--functional-->
 								<section class="box box-functional {{item.functional.functional_st}}" data-ng-class="{ 'complete' : item.functional.functional_st == 'none' }">
 									<h2 class="title">Functional Test</h2>
+									<div class="content">
+										<!--chart-->
+										<div class="pie chart">
+											<canvas class="org-pie pie-{{item.id}}" width="100%" height="100%" data-code-covered="{{item.functional.code_covered}}" data-code-not-covered="{{item.functional.code_not_covered}}"></canvas>
+										</div>
+										<!--percentage status-->
+										<div class="pie pcent">
+											<span class="real">{{item.functional.total}}%</span>
+											<span class="descr">{{item.functional.msg}}</span>
+										</div>
+										<!--a clear status bar-->
+										<div class="pie stbar">
+											<div class="fill" style="width: {{item.functional.code_covered_pcent}}%;">
+											</div>
+											<span class="pcent" ng-class="{ 'down': item.functional.code_covered_pcent <= 50 }">{{item.functional.code_covered_pcent}}%</span>
+											<span class="descr">code covered</span>
+										</div>
+									</div>
 								</section>
 
 								<!--final results-->

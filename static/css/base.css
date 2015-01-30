@@ -2896,6 +2896,70 @@ body {
   font-size: 60px;
   margin-bottom: 35px;
 }
+.container .content-list .list-servers .details > .box.box-functional .pie.pcent .real {
+  color: #BD8C00 !important;
+}
+.container .content-list .list-servers .details > .box.box-unit .content .pie.chart, .container .content-list .list-servers .details > .box.box-functional .content .pie.chart {
+  z-index: 9999;
+  margin: 2px 4px 5px 9px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  display: inline-block;
+}
+.container .content-list .list-servers .details > .box.box-unit .content .pie.chart .org-pie, .container .content-list .list-servers .details > .box.box-functional .content .pie.chart .org-pie {
+  width: 100px;
+  height: 100px;
+}
+.container .content-list .list-servers .details > .box.box-unit .content .pie.pcent, .container .content-list .list-servers .details > .box.box-functional .content .pie.pcent {
+  margin: 0 auto;
+  vertical-align: top;
+  display: inline-block;
+  margin-top: 40px;
+}
+.container .content-list .list-servers .details > .box.box-unit .content .pie.pcent .real, .container .content-list .list-servers .details > .box.box-functional .content .pie.pcent .real {
+  color: #A3C842;
+  font-size: 31px;
+}
+.container .content-list .list-servers .details > .box.box-unit .content .pie.pcent .descr, .container .content-list .list-servers .details > .box.box-functional .content .pie.pcent .descr {
+  color: #333;
+  font-size: 10px;
+  text-align: center;
+  clear: both;
+  display: block;
+}
+.container .content-list .list-servers .details > .box.box-unit .content .pie.stbar, .container .content-list .list-servers .details > .box.box-functional .content .pie.stbar {
+  background: #F7CBAC;
+  width: 90%;
+  height: 30px;
+  margin: 12px auto;
+  position: relative;
+}
+.container .content-list .list-servers .details > .box.box-unit .content .pie.stbar .pcent, .container .content-list .list-servers .details > .box.box-functional .content .pie.stbar .pcent {
+  color: #538135;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-top: -28px;
+}
+.container .content-list .list-servers .details > .box.box-unit .content .pie.stbar .pcent.down, .container .content-list .list-servers .details > .box.box-functional .content .pie.stbar .pcent.down {
+  color: #7D3402;
+}
+.container .content-list .list-servers .details > .box.box-unit .content .pie.stbar .descr, .container .content-list .list-servers .details > .box.box-functional .content .pie.stbar .descr {
+  color: #333;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-top: -2px;
+}
+.container .content-list .list-servers .details > .box.box-unit .content .pie.stbar .fill, .container .content-list .list-servers .details > .box.box-functional .content .pie.stbar .fill {
+  background: #C5E0B3;
+  height: 30px;
+  margin: 0;
+}
 .container .content-list .list-servers .details > .box.box-result {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;

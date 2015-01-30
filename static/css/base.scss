@@ -418,6 +418,74 @@ body {
 							}
 						}
 					}
+					&.box-functional {
+						.pie.pcent .real { color: #BD8C00 !important; }
+					}
+					&.box-unit, &.box-functional {
+						.content {
+							.pie.chart {
+								z-index: 9999;
+								margin: 2px 4px 5px 9px;
+								width: 100px;
+								height: 100px;
+								text-align: center;
+								display: inline-block;
+								.org-pie {
+									width: 100px;
+									height: 100px;
+								}
+							}
+							.pie.pcent {
+								.real {
+									color: #A3C842;
+									font-size: 31px;	
+								}
+								.descr {
+									color: $default_font_color;
+									font-size: 10px;
+									text-align: center;
+									clear: both;
+									display: block;
+								}
+								margin: 0 auto;
+								vertical-align: top;
+								display: inline-block;
+								margin-top: 40px;
+							}
+							.pie.stbar {
+								background: #F7CBAC;
+								width: 90%;
+								height: 30px;
+								margin: 12px auto;
+								position: relative;
+								.pcent {
+									color: #538135;
+									font-size: 17px;
+									font-weight: bold;
+									text-align: center;
+									width: 100%;
+									display: block;
+									margin-top: -28px;
+									&.down {
+										color: #7D3402;
+									}
+								}
+								.descr {
+									color: $default_font_color;
+									font-size: 12px;
+									text-align: center;
+									width: 100%;
+									display: block;
+									margin-top: -2px;
+								}
+								.fill {
+									background: #C5E0B3;
+									height: 30px;
+									margin: 0;
+								}
+							}
+						}
+					}
 					&.box-result {
 						@include box-shadow(none);
 						text-align: center;

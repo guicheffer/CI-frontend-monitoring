@@ -18,6 +18,7 @@
 			<!--CONTENT-->
 			<div class="content">
 
+				<!--CONTENT LIST-->
 				<section class="content-list">
 
 					<!--LIST HEADER-->
@@ -36,6 +37,7 @@
 
 					<!--MAIN LIST (SERVERS)-->
 					<ul id="list-servers" class="list-servers" data-ng-controller="showListBuildFirewall">
+						<!--ng-repeat-->
 						<li class="item item-{{item.state}}" data-ng-repeat="item in list" data-ng-click="set_item( $event )" data-ng-class="{ 'open' : item.debug }" data-id-control="{{item.id}}" data-on-finish-render="ngRepeatFinished">
 
 							<!--OPTS-->
@@ -205,11 +207,27 @@
 							</section>
 							<!--/MORE DETAILS-->
 						</li>
+						<!--/ng-repeat-->
 					</ul>
 					<!--/MAIN LIST (SERVERS)-->
 
-
 				</section>
+				<!--/CONTENT LIST-->
+
+				<!--me-->
+				<div class="guicheffer">
+					<ul class="links">
+						<li>
+							<a href="http://facebook.com/guicheffer" title="Go to my facebook profile" target="_blank"><i class="entypo-facebook-circled"></i></a>
+						</li>
+						<li>
+							<a href="https://github.com/guicheffeR/jobvite-assignment" title="Check this repo on GitHub" target="_blank"><i class="entypo-github-circled"></i></a>
+						</li>
+						<li>
+							<a href="http://br.linkedin.com/in/guicheffer" title="See my linkedin profile!" target="_blank"><i class="entypo-linkedin-circled"></i></a>
+						</li>
+					</ul>
+				</div>
 
 			</div>
 			<!--/CONTENT-->

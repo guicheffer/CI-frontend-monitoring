@@ -2641,6 +2641,9 @@ body {
 .container .content-list .list-servers > .item.open {
   height: 268px;
 }
+.container .content-list .list-servers > .item.open .details {
+  visibility: visible;
+}
 .container .content-list .list-servers > .item.open .label-name {
   color: #2D74B4;
   font-size: 17px;
@@ -2736,6 +2739,7 @@ body {
 .container .content-list .list-servers .details {
   margin: 18px 20px;
   cursor: default;
+  visibility: hidden;
   /*/STATIC GRID*/
 }
 .container .content-list .list-servers .details > .box {
@@ -2993,6 +2997,28 @@ body {
   line-height: 28px;
   font-size: 30px;
   margin-bottom: 30px;
+}
+.container .guicheffer {
+  float: right;
+}
+.container .guicheffer .links {
+  list-style: none;
+  font-size: 40px;
+}
+.container .guicheffer .links > li {
+  display: inline;
+  padding: 20px 0;
+}
+.container .guicheffer .links > li > a {
+  -moz-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  color: #333;
+  text-decoration: none;
+}
+.container .guicheffer .links > li > a:hover {
+  opacity: 0.6;
 }
 
 /* =============================================================================

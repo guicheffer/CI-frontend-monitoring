@@ -2470,7 +2470,7 @@ body {
 }
 
 .container {
-  width: 1265px;
+  width: 1260px;
   margin: 0 auto;
 }
 .container > .content {
@@ -2479,8 +2479,6 @@ body {
   box-sizing: border-box;
   padding: 5px;
   margin-top: 30px;
-  /* outline: 1px dotted; */
-  /* background: #eee; */
 }
 
 .hide {

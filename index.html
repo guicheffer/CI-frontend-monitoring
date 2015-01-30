@@ -60,25 +60,25 @@
 								<li class="label label-state">{{item.state}}</li>
 								<li class="label label-bars label-metrics">
 									<div class="lbar">
-										<div class="pcent {{item.metrics.metrics_st}}" style="width: {{item.metrics.total}}%">
+										<div class="pcent {{item.metrics.metrics_st}}" style="width: {{item.metrics.total + '%'}}">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-build">
 									<div class="lbar">
-										<div class="pcent {{item.build.build_st}}" style="width: {{item.build.total}}%">
+										<div class="pcent {{item.build.build_st}}" style="width: {{item.build.total + '%'}}">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-unit">
 									<div class="lbar">
-										<div class="pcent {{item.unit.unit_st}}" style="width: {{item.unit.total}}%">
+										<div class="pcent {{item.unit.unit_st}}" style="width: {{item.unit.total + '%'}}">
 										</div>
 									</div>
 								</li>
 								<li class="label label-bars label-functional">
 									<div class="lbar">
-										<div class="pcent {{item.functional.functional_st}}" style="width: {{item.functional.total}}%">
+										<div class="pcent {{item.functional.functional_st}}" style="width: {{item.functional.total + '%'}}">
 										</div>
 									</div>
 								</li>
@@ -147,18 +147,18 @@
 									<div class="content">
 										<!--chart-->
 										<div class="pie chart">
-											<canvas class="org-pie pie-{{item.id}}" width="100%" height="100%" data-code-covered="{{item.unit.code_covered}}" data-code-not-covered="{{item.unit.code_not_covered}}"></canvas>
+											<canvas class="org-pie pie-{{item.id}}" width="100" height="100" data-code-covered="{{item.unit.code_covered}}" data-code-not-covered="{{item.unit.code_not_covered}}"></canvas>
 										</div>
 										<!--percentage status-->
 										<div class="pie pcent">
-											<span class="real">{{item.unit.total}}%</span>
+											<span class="real">{{item.unit.total + '%'}}</span>
 											<span class="descr">{{item.unit.msg}}</span>
 										</div>
 										<!--a clear status bar-->
 										<div class="pie stbar">
-											<div class="fill" style="width: {{item.unit.code_covered_pcent}}%;">
+											<div class="fill" style="width: {{item.unit.code_covered_pcent + '%'}};">
 											</div>
-											<span class="pcent" data-ng-class="{ 'down': item.unit.code_covered_pcent <= 50 }">{{item.unit.code_covered_pcent}}%</span>
+											<span class="pcent" data-ng-class="{ 'down': item.unit.code_covered_pcent <= 50 }">{{item.unit.code_covered_pcent + '%'}}</span>
 											<span class="descr">code covered</span>
 										</div>
 									</div>
@@ -170,18 +170,18 @@
 									<div class="content">
 										<!--chart-->
 										<div class="pie chart">
-											<canvas class="org-pie pie-{{item.id}}" width="100%" height="100%" data-code-covered="{{item.functional.code_covered}}" data-code-not-covered="{{item.functional.code_not_covered}}"></canvas>
+											<canvas class="org-pie pie-{{item.id}}" width="100" height="100" data-code-covered="{{item.functional.code_covered}}" data-code-not-covered="{{item.functional.code_not_covered}}"></canvas>
 										</div>
 										<!--percentage status-->
 										<div class="pie pcent">
-											<span class="real">{{item.functional.total}}%</span>
+											<span class="real">{{item.functional.total + '%'}}</span>
 											<span class="descr">{{item.functional.msg}}</span>
 										</div>
 										<!--a clear status bar-->
 										<div class="pie stbar">
-											<div class="fill" style="width: {{item.functional.code_covered_pcent}}%;">
+											<div class="fill" style="width: {{item.functional.code_covered_pcent + '%'}};">
 											</div>
-											<span class="pcent" data-ng-class="{ 'down': item.functional.code_covered_pcent <= 50 }">{{item.functional.code_covered_pcent}}%</span>
+											<span class="pcent" data-ng-class="{ 'down': item.functional.code_covered_pcent <= 50 }">{{item.functional.code_covered_pcent + '%'}}</span>
 											<span class="descr">code covered</span>
 										</div>
 									</div>
@@ -225,6 +225,7 @@
 
 				<!--me-->
 				<footer class="guicheffer">
+					<span>Validated by: W3C</span>
 					<ul class="links">
 						<li>
 							<a href="http://facebook.com/guicheffer" title="Go to my facebook profile" target="_blank"><i class="entypo-facebook-circled"></i></a>

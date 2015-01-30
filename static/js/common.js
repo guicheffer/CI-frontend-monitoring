@@ -17,13 +17,47 @@
 var jobviteservers = angular.module ( "jobviteservers", [] ), servers = {} ;
 
 
+//SERVER > CONFIGS
+servers.configs = {
+	container: '.container',
+	content: '.container > .content',
+	list_servers: '.list-servers',
+	json_data: 'random_data.php',
+	chart_options: {
+		scaleShowLabelBackdrop: true,
+		scaleBackdropColor: "rgba(255,255,255,0.75)",
+		scaleBeginAtZero: true,
+		scaleBackdropPaddingY: 2,
+		scaleBackdropPaddingX: 2,
+		scaleShowLine: true,
+		segmentShowStroke: true,
+		segmentStrokeColor: "#fff",
+		segmentStrokeWidth: 1,
+		animationSteps: 100,
+		animationEasing: "easeOutBounce",
+		animateRotate: true,
+		animateScale: false
+    },
+    init: function() {
+    	var that = this, gif_loading = $( '.gif-loading', that.container ), btn_refresh = $( '.btn-refresh', that.container ) ;
+
+    	//set it (img_loading)
+    	gif_loading.css( 'left', ( ( $( window ).width() / 2 ) - ( gif_loading.width() / 2 ) ) ) ;
+    	gif_loading.css( 'top', ( ( $( window ).height() / 2 ) - ( gif_loading.height() + 100 ) ) ) ;
+    }
+} ;
+
+
 /*ANGULAR FUNCTIONS*/
 jobviteservers.controller( 'showListBuildFirewall' , [ '$scope', '$http', function( $scope, $http ) {
 
-	$http.get( 'static/js/list.json' )
+
+	//get random data
+	$http.get( servers.configs.json_data )
 		.then( function( res ) {
 			$scope.list = res.data ;
 		} ) ;
+
 
 	$scope.set_item = function ( $event ) {
 		var current_item = $( $event.currentTarget ),
@@ -41,6 +75,24 @@ jobviteservers.controller( 'showListBuildFirewall' , [ '$scope', '$http', functi
 		}
 	}
 
+
+
+	$scope.refresh_list = function( $event ) {
+		//taking loading class out
+		$( servers.configs.content ).toggleClass( 'loading' ) ;
+
+		//clearing elements
+		$( '.list-servers li.item', servers.configs.content ).html( '' ) ;
+
+		//set new random data after pressing refresh button
+		$http.get( servers.configs.json_data )
+			.then( function( res ) {
+				$scope.list = res.data ;
+			} ) ;
+	}
+
+
+	//finished ng-repeat
 	$scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
 		var name_pie = '.unit-pie' ;
 
@@ -64,11 +116,12 @@ jobviteservers.controller( 'showListBuildFirewall' , [ '$scope', '$http', functi
 					highlight: "#EC7C30",
 					label: "value"
 				}
-			]
-
-			var unit_chart_mount = new Chart(ctx).Pie( data, servers.configs.options ) ;
-
+			],
+			unit_chart_mount = new Chart(ctx).Pie( data, servers.configs.chart_options ) ;
 	    } ) ;
+
+	    //set loading class
+	    $( servers.configs.content ).toggleClass( 'loading' ) ;
 	});
 
 } ] ).directive( 'onFinishRender', [ '$timeout', function ( $timeout ) {
@@ -86,24 +139,8 @@ jobviteservers.controller( 'showListBuildFirewall' , [ '$scope', '$http', functi
 /*/ANGULAR FUNCTIONS*/
 
 
-//server configs
-servers.configs = {
-	container: '.container',
-	list_servers: '.list-servers',
-	options: {
-		scaleShowLabelBackdrop: true,
-		scaleBackdropColor: "rgba(255,255,255,0.75)",
-		scaleBeginAtZero: true,
-		scaleBackdropPaddingY: 2,
-		scaleBackdropPaddingX: 2,
-		scaleShowLine: true,
-		segmentShowStroke: true,
-		segmentStrokeColor: "#fff",
-		segmentStrokeWidth: 1,
-		animationSteps: 100,
-		animationEasing: "easeOutBounce",
-		animateRotate: true,
-		animateScale: false,
-		legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-    }
-} ;
+//DOCUMENT [READY]
+$( function() {
+	//set position img loading (gif_loading) [centralize it]
+	servers.configs.init() ;
+} ) ;

@@ -16,7 +16,16 @@
 		<div class="container">
 
 			<!--CONTENT-->
-			<div class="content">
+			<div class="content loading" data-ng-controller="showListBuildFirewall">
+					
+				<!--REFRESH BUTTON-->		
+				<button class="btn btn-refresh" data-ng-click="refresh_list( $event )"><i class="fontawesome-refresh icon-side"></i>Refresh data</button>
+				<!--/REFRESH BUTTON-->	
+
+				<!--img loading in png/gif-->
+				<div class="gif-loading">
+					<img alt="Loading" title="Loading..." src="static/images/load-png2.gif">
+				</div>
 
 				<!--CONTENT LIST-->
 				<section class="content-list">
@@ -36,12 +45,12 @@
 
 
 					<!--MAIN LIST (SERVERS)-->
-					<ul id="list-servers" class="list-servers" data-ng-controller="showListBuildFirewall">
+					<ul id="list-servers" class="list-servers">
 						<!--ng-repeat-->
 						<li class="item item-{{item.state}}" data-ng-repeat="item in list" data-ng-click="set_item( $event )" data-ng-class="{ 'open' : item.debug }" data-id-control="{{item.id}}" data-on-finish-render="ngRepeatFinished">
 
 							<!--OPTS-->
-							<ul class="item-options">
+							<ul class="item-options" title="Click to see more details">
 								<li class="label label-tag tag-type">
 									<i data-ng-class="{'entypo-monitor': item.type == 'build' , 'fontawesome-th': item.type == 'firewall'}"></i>
 								</li>
@@ -149,7 +158,7 @@
 										<div class="pie stbar">
 											<div class="fill" style="width: {{item.unit.code_covered_pcent}}%;">
 											</div>
-											<span class="pcent" ng-class="{ 'down': item.unit.code_covered_pcent <= 50 }">{{item.unit.code_covered_pcent}}%</span>
+											<span class="pcent" data-ng-class="{ 'down': item.unit.code_covered_pcent <= 50 }">{{item.unit.code_covered_pcent}}%</span>
 											<span class="descr">code covered</span>
 										</div>
 									</div>
@@ -172,7 +181,7 @@
 										<div class="pie stbar">
 											<div class="fill" style="width: {{item.functional.code_covered_pcent}}%;">
 											</div>
-											<span class="pcent" ng-class="{ 'down': item.functional.code_covered_pcent <= 50 }">{{item.functional.code_covered_pcent}}%</span>
+											<span class="pcent" data-ng-class="{ 'down': item.functional.code_covered_pcent <= 50 }">{{item.functional.code_covered_pcent}}%</span>
 											<span class="descr">code covered</span>
 										</div>
 									</div>
@@ -215,7 +224,7 @@
 				<!--/CONTENT LIST-->
 
 				<!--me-->
-				<div class="guicheffer">
+				<footer class="guicheffer">
 					<ul class="links">
 						<li>
 							<a href="http://facebook.com/guicheffer" title="Go to my facebook profile" target="_blank"><i class="entypo-facebook-circled"></i></a>
@@ -230,7 +239,7 @@
 							<a href="skype:tirissia?call" title="Contact me on skype!" target="_blank"><i class="entypo-skype-circled"></i></a>
 						</li>
 					</ul>
-				</div>
+				</footer>
 
 			</div>
 			<!--/CONTENT-->

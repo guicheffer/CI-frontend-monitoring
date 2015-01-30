@@ -50,7 +50,7 @@
 	},
 	{
 		"id": 1,
-		"type": "build",
+		"type": "firewall",
 		"name": "432462",
 		"owner": "jtuck",
 		"date": "4/18/2014 12:12pm",
@@ -149,7 +149,7 @@
 	{
 		"debug": "open",
 		"id": 3,
-		"type": "firewall",
+		"type": "build",
 		"name": "Tenrox-R1_1234",
 		"owner": "sammy",
 		"date": "4/18/2014 10:53am",
@@ -247,7 +247,7 @@
 	},
 	{
 		"id": 5,
-		"type": "build",
+		"type": "firewall",
 		"name": "432459",
 		"owner": "sammy",
 		"date": "4/18/2014 10:53am",

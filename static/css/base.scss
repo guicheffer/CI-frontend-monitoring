@@ -79,14 +79,25 @@ body {
    ========================================================================== */
 
 .container {
-	.content-list {
-		@include background-image(linear-gradient(to right, $background_color_running_from, $background_color_running_to));
-		width: 100%;
-		margin: 20px auto;
-		clear: both;
-		border: 2px solid #C0CCDB;
-		padding: 20px;
-		@include box-sizing(border-box);
+	.content {
+		.gif-loading{
+			display: none;
+		}
+		&.loading {
+			.gif-loading {
+				display: block;
+				z-index: 9999;
+				width: 150px;
+				position: absolute;
+				margin: 0 auto;
+				margin-top: 50px;
+				img { width: 100%; }
+			}
+			.content-list {
+				opacity: 0.2;
+				pointer-events: none;
+			}
+		}
 		.btn {
 			@include box-sizing(border-box);
 			@include border-radius(4px);
@@ -116,6 +127,15 @@ body {
 					font-weight: bold;
 				}
 			}
+			&.btn-refresh {
+				float: right;
+				padding: 3px;
+				position: relative;
+				top: -10px;
+				.icon-side {
+					width: 14px;
+				}
+			}
 			&:hover {
 				background: #fff;
 				color: $color_default_ad;
@@ -128,6 +148,16 @@ body {
 			border: 1px solid $color_default_ad;
 			color: $color_default_ad;
 		}
+	}
+	.content-list {
+		@include background-image(linear-gradient(to right, $background_color_running_from, $background_color_running_to));
+		@include box-sizing(border-box);
+		clear: both;
+		position: relative;
+		width: 100%;
+		margin: 20px auto;
+		padding: 20px;
+		border: 2px solid #C0CCDB;
 		.list-masthead {
 			list-style: none;
 			clear: both;
@@ -153,7 +183,7 @@ body {
 				cursor: pointer;
 				overflow: hidden;
 				position: relative;
-				user-select: none;
+				user-select: none; //responsive case
 				&:first-child {
 					margin: 0;
 				}
@@ -163,7 +193,7 @@ body {
 					color: #BFBFBF;
 					pointer-events: none;
 					cursor: default;
-					opacity: 0.8;
+					opacity: 0.5;
 				}
 				&.item-running {
 					@include background-image(linear-gradient(to right bottom, $background_color_running_from, $background_color_running_to));
@@ -526,25 +556,6 @@ body {
 			}
 		}
 	}
-	.guicheffer {
-		float: right;
-		.links {
-			list-style: none;
-			font-size: 40px;
-			& > li {
-				display: inline;
-				padding: 20px 0;
-				& > a {
-					@include transition(opacity .2s ease-in);
-					color: $default_font_color;
-					text-decoration: none;
-					&:hover {
-						opacity: 0.6;
-					}
-				}
-			}
-		}
-	}
 }
 
 
@@ -553,6 +564,24 @@ body {
    Footer
    ========================================================================== */
 
-/* --- */
+footer.guicheffer {
+	float: right;
+	.links {
+		list-style: none;
+		font-size: 40px;
+		& > li {
+			display: inline;
+			padding: 20px 0;
+			& > a {
+				@include transition(opacity .2s ease-in);
+				color: $default_font_color;
+				text-decoration: none;
+				&:hover {
+					opacity: 0.6;
+				}
+			}
+		}
+	}
+}
 
 /*---*/

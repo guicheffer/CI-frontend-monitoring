@@ -12,22 +12,19 @@
 		return rand( 70, 300 ) ;
 	}
 	function random_status(){
-		$value_s = rand( 1, 5 ) ;
+		$value_s = rand( 1, 4 ) ;
 
 		switch ( $value_s ) {
 			case 1:
-				return "running" ;
-				break;
-			case 2:
 				return "rejected" ;
 				break;
-			case 3:
+			case 2:
 				return "complete" ;
 				break;
-			case 4:
+			case 3:
 				return "accepted" ;
 				break;
-			case 5:
+			case 4:
 				return "none" ;
 				break;
 			

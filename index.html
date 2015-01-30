@@ -7,9 +7,10 @@
 		<link rel="stylesheet" type="text/css" href="static/css/base.css">
 		<script type="text/javascript" src="static/js/plugins/angular.min.js"></script>
 		<script type="text/javascript" src="static/js/plugins/jquery_2-1-1.min.js"></script>
+		<script type="text/javascript" src="static/js/plugins/chart.min.js"></script>
 		<script type="text/javascript" src="static/js/common.min.js"></script>
 	</head>
-	<body ng-app="jobviteservers">
+	<body data-ng-app="jobviteservers">
 
 		<!--CONTAINER-->
 		<div class="container">
@@ -34,13 +35,13 @@
 
 
 					<!--MAIN LIST (SERVERS)-->
-					<ul id="list-servers" class="list-servers" ng-controller="showListBuildFirewall">
-						<li class="item item-{{item.state}}" data-id-control="{{item.id}}" ng-repeat="item in list" ng-click="set_item( $event )" ng-class="{ 'open' : item.debug }" >
+					<ul id="list-servers" class="list-servers" data-ng-controller="showListBuildFirewall">
+						<li class="item item-{{item.state}}" data-id-control="{{item.id}}" data-ng-repeat="item in list" data-ng-click="set_item( $event )" data-ng-class="{ 'open' : item.debug }" >
 
 							<!--OPTS-->
 							<ul class="item-options">
 								<li class="label label-tag tag-type">
-									<i ng-class="{'entypo-monitor': item.type == 'build' , 'fontawesome-th': item.type == 'firewall'}"></i>
+									<i data-ng-class="{'entypo-monitor': item.type == 'build' , 'fontawesome-th': item.type == 'firewall'}"></i>
 								</li>
 								<li class="label label-name">{{item.name}}</li>
 								<li class="label label-owner">{{item.owner}}</li>
@@ -80,46 +81,81 @@
 
 
 							<!--MORE DETAILS-->
-							<div class="details">
-								<div class="box box-metrics {{item.metrics.metrics_st}}" ng-class="{ 'complete' : item.metrics.metrics_st == 'none' }">
+							<section class="details">
+
+								<!--metrics-->
+								<section class="box box-metrics {{item.metrics.metrics_st}}" data-ng-class="{ 'complete' : item.metrics.metrics_st == 'none' }">
 									<h2 class="title">Metrics</h2>
-									<div class="arrows">
-										<div class="arrow-item">
-											<div class="arrow arrow-{{item.metrics.T.way}} {{item.metrics.T.way}}">
-												<span class="value-n">{{item.metrics.T.n}}</span>
+									<div class="content arrows">
+										<div class="arrow-item" title="Measuring metrics">
+											<div class="arrow arrow-{{item.metrics.test.way}} {{item.metrics.test.way}}">
+												<span class="value-n">{{item.metrics.test.n}}</span>
 											</div>
 											<span class="legend">Test</span>
 										</div>
-										<div class="arrow-item">
-											<div class="arrow arrow-{{item.metrics.M.way}} {{item.metrics.M.way}}">
-												<span class="value-n">{{item.metrics.M.n}}</span>
+										<div class="arrow-item" title="Measuring metrics">
+											<div class="arrow arrow-{{item.metrics.maint.way}} {{item.metrics.maint.way}}">
+												<span class="value-n">{{item.metrics.maint.n}}</span>
 											</div>
 											<span class="legend">Maintainability</span>
 										</div>
+										<div class="arrow-item" title="Measuring metrics">
+											<div class="arrow arrow-{{item.metrics.sec.way}} {{item.metrics.sec.way}}" data-ng-class="{ 'arrow-up up': ( item.metrics.sec.way == 'left' || item.metrics.sec.way == 'right' ) }"> <!--fix:addclass-left/right-->
+												<span class="value-n">{{item.metrics.sec.n}}</span>
+											</div>
+											<span class="legend">Security</span>
+										</div>
+										<div class="arrow-item" title="Measuring metrics">
+											<div class="arrow arrow-{{item.metrics.work.way}} {{item.metrics.work.way}}" data-ng-class="{ 'arrow-up up': ( item.metrics.work.way == 'left' || item.metrics.work.way == 'right' ) }"> <!--fix:addclass-left/right-->
+												<span class="value-n">{{item.metrics.work.n}}</span>
+											</div>
+											<span class="legend">Workmanship</span>
+										</div>
 									</div>
-								</div>
-								<div class="box box-build {{item.build.build_st}}" ng-class="{ 'complete' : item.build.build_st == 'none' }">
+								</section>
+
+								<!--build-->
+								<section class="box box-build {{item.build.build_st}}" data-ng-class="{ 'complete' : item.build.build_st == 'none' }">
 									<h2 class="title">Build</h2>
-								</div>
-								<div class="box box-unit {{item.unit.unit_st}}" ng-class="{ 'complete' : item.unit.unit_st == 'none' }">
+									<div class="content">
+										<a class="item item-debug prevent-default" href="#" title="Go to Debug preview">
+											<i class="entypo-monitor"></i>
+											<span class="legend">Debug</span>
+										</a>
+										<a class="item item-release prevent-default" href="#" title="Go to Release preview">
+											<i class="entypo-monitor"></i>
+											<span class="legend">Release</span>
+										</a>
+										<p class="date-updated">{{item.build.date_build}}</p>
+									</div>
+								</section>
+
+								<!--unit-->
+								<section class="box box-unit {{item.unit.unit_st}}" data-ng-class="{ 'complete' : item.unit.unit_st == 'none' }">
 									<h2 class="title">Unit Test</h2>
-								</div>
-								<div class="box box-functional {{item.functional.functional_st}}" ng-class="{ 'complete' : item.functional.functional_st == 'none' }">
+								</section>
+
+								<!--functional-->
+								<section class="box box-functional {{item.functional.functional_st}}" data-ng-class="{ 'complete' : item.functional.functional_st == 'none' }">
 									<h2 class="title">Functional Test</h2>
-								</div>
-								<div class="box box-result {{item.state}}">
+								</section>
+
+								<!--final results-->
+								<section class="box box-result {{item.state}}">
 									<h2 class="title">Result:</h2>
-									<h3 ng-if="!(item.state == 'running' || item.state == 'complete')">Change {{item.state}}</h3>
+									<h3 data-ng-if="!(item.state == 'running' || item.state == 'complete')">Change {{item.state}}</h3>
 									<p class="descr">{{item.final_status}}</p>
 
-									<!--accepted-->
-									<button class="btn btn-merge prevent-default" ng-if="item.state == 'accepted'"><i class="fontawesome-search icon-side inverted"></i>Merged Build</button>
+									<!--running:shows-the-message-->
 
 									<!--accepted-->
-									<button class="btn btn-find-issues prevent-default" ng-if="item.state == 'rejected'"><i class="fontawesome-search icon-side"></i>Find Issues</button>
+									<button class="btn btn-merge prevent-default" data-ng-if="item.state == 'accepted'"><i class="fontawesome-search icon-side inverted"></i>Merged Build</button>
+
+									<!--accepted-->
+									<button class="btn btn-find-issues prevent-default" data-ng-if="item.state == 'rejected'"><i class="fontawesome-search icon-side"></i>Find Issues</button>
 
 									<!--complete-->
-									<div ng-if="item.state == 'complete'">
+									<div data-ng-if="item.state == 'complete'">
 										<button class="btn btn-deploy prevent-default">Deploy</button>
 										<span class="text-inline">to: </span>
 										<select class="select prevent-default select-deploy-to">
@@ -129,8 +165,8 @@
 										</select>
 									</div>
 
-								</div>
-							</div>
+								</section>
+							</section>
 							<!--/MORE DETAILS-->
 						</li>
 					</ul>

@@ -10,18 +10,27 @@
 		"metrics": {
 			"total": "0%",
 			"metrics_st": "complete",
-			"T": {
+			"test": {
 				"n": 64,
 				"way": "down"
 			},
-			"M": {
+			"maint": {
 				"n": 53,
 				"way": "up"
+			},
+			"sec": {
+				"n": 64,
+				"way": "right"
+			},
+			"work": {
+				"n": 72,
+				"way": "right"
 			}
 		},
 		"build": {
 			"total": "0%",
-			"build_st": "running"
+			"build_st": "running",
+			"date_build": "10:46am - 4/17/2014"
 		},
 		"unit": {
 			"total": "0%",
@@ -43,18 +52,27 @@
 		"metrics": {
 			"total": "30%",
 			"metrics_st": "complete",
-			"T": {
+			"test": {
 				"n": 64,
-				"way": "down"
-			},
-			"M": {
-				"n": 53,
 				"way": "up"
+			},
+			"maint": {
+				"n": 64,
+				"way": "up"
+			},
+			"sec": {
+				"n": 64,
+				"way": "left"
+			},
+			"work": {
+				"n": 72,
+				"way": "right"
 			}
 		},
 		"build": {
 			"total": "30%",
-			"build_st": "running"
+			"build_st": "running",
+			"date_build": "10:46am - 4/17/2014"
 		},
 		"unit": {
 			"total": "30%",
@@ -67,39 +85,6 @@
 	},
 	{
 		"id": 2,
-		"type": "build",
-		"name": "432461",
-		"owner": "sammy",
-		"date": "4/18/2014 10:53am",
-		"state": "accepted",
-		"final_status": "Auto-merged",
-		"metrics": {
-			"total": "70%",
-			"metrics_st": "complete",
-			"T": {
-				"n": 64,
-				"way": "down"
-			},
-			"M": {
-				"n": 53,
-				"way": "up"
-			}
-		},
-		"build": {
-			"total": "70%",
-			"build_st": "complete"
-		},
-		"unit": {
-			"total": "70%",
-			"unit_st": "rejected"
-		},
-		"functional": {
-			"total": "70%",
-			"functional_st": "none"
-		}
-	},
-	{
-		"id": 3,
 		"type": "firewall",
 		"name": "432461",
 		"owner": "sammy",
@@ -109,18 +94,27 @@
 		"metrics": {
 			"total": "70%",
 			"metrics_st": "rejected",
-			"T": {
+			"test": {
 				"n": 64,
 				"way": "down"
 			},
-			"M": {
+			"maint": {
 				"n": 53,
 				"way": "up"
+			},
+			"sec": {
+				"n": 64,
+				"way": "right"
+			},
+			"work": {
+				"n": 72,
+				"way": "right"
 			}
 		},
 		"build": {
 			"total": "70%",
-			"build_st": "complete"
+			"build_st": "running",
+			"date_build": "10:46am - 4/17/2014"
 		},
 		"unit": {
 			"total": "70%",
@@ -133,7 +127,7 @@
 	},
 	{
 		"debug": "open",
-		"id": 4,
+		"id": 3,
 		"type": "firewall",
 		"name": "Tenrox-R1_1234",
 		"owner": "sammy",
@@ -143,22 +137,115 @@
 		"metrics": {
 			"total": "70%",
 			"metrics_st": "complete",
-			"T": {
+			"test": {
 				"n": 64,
 				"way": "down"
 			},
-			"M": {
+			"maint": {
 				"n": 53,
 				"way": "up"
+			},
+			"sec": {
+				"n": 64,
+				"way": "right"
+			},
+			"work": {
+				"n": 72,
+				"way": "right"
 			}
 		},
 		"build": {
 			"total": "70%",
-			"build_st": "complete"
+			"build_st": "running",
+			"date_build": "10:46am - 4/17/2014"
 		},
 		"unit": {
 			"total": "70%",
 			"unit_st": "complete"
+		},
+		"functional": {
+			"total": "70%",
+			"functional_st": "none"
+		}
+	},
+	{
+		"id": 4,
+		"type": "firewall",
+		"name": "432460",
+		"owner": "sammy",
+		"date": "4/18/2014 10:53am",
+		"state": "rejected",
+		"final_status": "Metrics Reduction",
+		"metrics": {
+			"total": "70%",
+			"metrics_st": "rejected",
+			"test": {
+				"n": 45,
+				"way": "down"
+			},
+			"maint": {
+				"n": 39,
+				"way": "down"
+			},
+			"sec": {
+				"n": 64,
+				"way": "right"
+			},
+			"work": {
+				"n": 72,
+				"way": "right"
+			}
+		},
+		"build": {
+			"total": "70%",
+			"build_st": "complete",
+			"date_build": "10:46am - 4/17/2014"
+		},
+		"unit": {
+			"total": "70%",
+			"unit_st": "rejected"
+		},
+		"functional": {
+			"total": "70%",
+			"functional_st": "none"
+		}
+	},
+	{
+		"id": 5,
+		"type": "build",
+		"name": "432459",
+		"owner": "sammy",
+		"date": "4/18/2014 10:53am",
+		"state": "accepted",
+		"final_status": "Auto-merged",
+		"metrics": {
+			"total": "70%",
+			"metrics_st": "complete",
+			"test": {
+				"n": 64,
+				"way": "down"
+			},
+			"maint": {
+				"n": 53,
+				"way": "up"
+			},
+			"sec": {
+				"n": 64,
+				"way": "right"
+			},
+			"work": {
+				"n": 72,
+				"way": "right"
+			}
+		},
+		"build": {
+			"total": "70%",
+			"build_st": "running",
+			"date_build": "10:46am - 4/17/2014"
+		},
+		"unit": {
+			"total": "70%",
+			"unit_st": "rejected"
 		},
 		"functional": {
 			"total": "70%",

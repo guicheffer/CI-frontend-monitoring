@@ -12,7 +12,7 @@
 		return rand( 70, 300 ) ;
 	}
 	function random_status(){
-		$value_s = rand( 1, 4 ) ;
+		$value_s = rand( 1, 3 ) ;
 
 		switch ( $value_s ) {
 			case 1:
@@ -24,9 +24,9 @@
 			case 3:
 				return "accepted" ;
 				break;
-			case 4:
+			/*case 4:
 				return "none" ;
-				break;
+				break;*/
 			
 			default:
 				print "error" ;

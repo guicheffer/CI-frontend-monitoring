@@ -25,7 +25,7 @@
 				return "accepted" ;
 				break;
 			/*case 4:
-				return "none" ;
+				return "none" ; //fixing status data
 				break;*/
 			
 			default:
@@ -126,7 +126,14 @@
 	$data = Array() ;
 
 	//set it at all (PUSH IN THE ARRAY FOR RETURNING)
-	for ( $i = 0 ; $i < 6 ; $i++ ) { 
+	for ( $i = 0 ; $i < 6 ; $i++ ) {
+		$unit_code_covered = random_pie() ;
+		$unit_code_not_covered = random_pie() ;
+		$functional_code_covered = random_pie() ;
+		$functional_code_not_covered = random_pie() ;
+		$unit_pcent_code_covered = intval( ( $unit_code_covered * 100 ) / ( $unit_code_covered + $unit_code_not_covered ) ) ;
+		$functional_pcent_code_covered = intval( ( $functional_code_covered * 100 ) / ( $functional_code_covered + $functional_code_not_covered ) ) ;
+
 		$data[ $i ] = Array(
 			"id" => $i,
 			"type" => $default_options[ $i ][ "type" ],
@@ -164,17 +171,17 @@
 				"total" => random_pcent(),
 				"unit_st" => random_status(),
 				"msg" => "tests passed",
-				"code_covered_pcent" => random_pcent(),
-				"code_covered" => random_pie(),
-				"code_not_covered" => random_pie()
+				"code_covered" => $unit_code_covered,
+				"code_not_covered" => $unit_code_not_covered,
+				"code_covered_pcent" => $unit_pcent_code_covered
 			),
 			"functional" => Array(
 				"total" => random_pcent(),
 				"functional_st" => random_status(),
 				"msg" => "tests passed",
-				"code_covered_pcent" => random_pcent(),
-				"code_covered" => random_pie(),
-				"code_not_covered" => random_pie()
+				"code_covered" => $functional_code_covered,
+				"code_not_covered" => $functional_code_not_covered,
+				"code_covered_pcent" => $functional_pcent_code_covered
 			),
 			"debug" => $default_options[ $i ][ "debug" ]
 		) ;

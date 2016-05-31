@@ -1,5 +1,5 @@
 {
-  "name": "jobvite-assignment",
+  "name": "CI-frontend-monitoring",
   "version": "0.0.2",
   "devDependencies": { 
     "gulp": "~3.8.10",

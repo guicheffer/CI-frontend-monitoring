@@ -1,7 +1,7 @@
 <?php
 	header( 'Content-Type: application/json' );
 
-	/*functions*/
+	/*main functions*/
 	function random_pcent(){
 		return rand( 0, 99 ) ;
 	}

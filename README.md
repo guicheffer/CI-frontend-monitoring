@@ -1,4 +1,4 @@
-# jobvite-assignment
+# CI frontend monitoring screen
 Built with Angular and Polish of UX experience and adherence to spec, Cleanliness, simplicity of code / stubs aiming status of builds and firewalls.
 
 # 1. Installing Gulp

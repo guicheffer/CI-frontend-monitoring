@@ -13,4 +13,4 @@ Execute in your terminal *sudo* npm install in the root of the project to get al
 # 4. Open the root
 (...)in the browser to see (in the first file probaly being .html) the test as combined before to have it more next to the wireframe.
 
-Check it out on the live URL (in my server): http://tests.guiatech.com.br/jobvite-assignment/
+Check it out on the live URL (in my server): http://tests.guiatech.com.br/ci-monitoring/

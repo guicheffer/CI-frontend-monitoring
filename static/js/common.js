@@ -2,9 +2,9 @@
 
 /**
  * Jobvite Assignment
- * http://tests.guiatech.com.br/jobvite-assignment/
+ * http://tests.guiatech.com.br/ci-monitoring/
  * Copyright 2015, Guia Tech
- * Author: Jo„o Guilherme C. Prado
+ * Author: Jo√£o Guilherme C. Prado
  * Library: jQuery 2.1.1
  * 
  * Built with Angular and Polish of UX experience and adherence to spec, Cleanliness, simplicity of code / stubs aiming status of builds and firewalls.
